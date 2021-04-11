@@ -1,0 +1,137 @@
+<!-- 分类详情页 -->
+<div class="wrap-bd">
+  <h1 class="deta-hd cate-hd" data-cate="<%- page.category %>" style="display: none;">
+    <%- page.category %>&nbsp;<span style="font-size: 22px; color: #ddd;">分类</span>
+  </h1>
+  <%- partial('_partial/category-heading') %>
+
+  <% page.posts.each(function(post, i){ %>
+    <% var year=post.date.year(); %>
+      <!-- <section class="archives-wrap">
+      <div class="archive-year-wrap">
+        <%= date(post.date, "YYYY-MM-DD") %><a href="<%- url_for(post.path) %>" class="archive-year"><%= post.title %></a>
+      </div>
+    </section> -->
+      <div class="p-list">
+        <ul>
+          <li class="p-list-item clearfix">
+            <!-- S 文章图片 -->
+            <div class="post-img">
+              <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
+                <div class="overlay"></div>
+                <img src="<%- post.img %>" alt=VPS>
+              </a>
+            </div>
+            <!-- E 文章图片 -->
+            <div class="p-list-item-right img-pc">
+              <!-- S 标题内容 -->
+              <div class="content">
+                <div class="ph-cate">
+                  <%- list_tags(post.categories, { show_count: false }) %>
+                </div>
+                <!-- S 文章标题 -->
+                <div class="d-pp-h">
+                  <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
+                      title="<%- post.title %>">
+                      <%= post.title %>
+                    </a></h1>
+                </div>
+                <!-- E 文章标题 -->
+                <div class="zy">
+                  <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
+                      href="<%- url_for(post.path) %>">阅读全文</a>
+                </div>
+              </div>
+              <!-- E 标题内容 -->
+              <!-- S 文章信息 -->
+              <div class="post-info">
+                <ul>
+                  <li class="date post-info-item">
+                    <span>
+                      <%- date(post.date, "YYYY-MM-DD" ) %>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- E 文章信息 -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <% }) %>
+        <!-- 底部分页 -->
+        <% if (page.total> 1){ %>
+          <div id="pageNav" style="clear: both;">
+            <% var prev_text=__('上一页');var next_text=__('下一页') %>
+            <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
+          </div>
+          <% } %>
+          <!-- 底部文章列表 -->
+          <% if (is_home()){ %>
+            <div class="mo-rec">
+              <h3 style="width: 90%; margin: 20px auto 20px; font-size: 20px; font-weight: bold; color: #222;">最近更新</h3>
+              <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
+                <div class="p-list">
+                  <ul>
+                    <li class="p-list-item clearfix">
+                      <!-- S 文章图片 -->
+                      <div class="post-img">
+                        <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
+                          <div class="overlay"></div>
+                          <img src="<%- post.img %>" alt="文图">
+                        </a>
+                      </div>
+                      <!-- E 文章图片 -->
+                      <div class="p-list-item-right clearfix">
+                        <!-- S 标题内容 -->
+                        <div class="content">
+                          <div class="ph-cate">
+                            <%- list_tags(post.categories, { show_count: false }) %>
+                          </div>
+                          <!-- S 文章标题 -->
+                          <div class="d-pp-h">
+                            <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
+                                title="<%- post.title %>">
+                                <%= post.title %>
+                              </a></h1>
+                          </div>
+                          <!-- E 文章标题 -->
+
+
+                        </div>
+                        <!-- E 标题内容 -->
+                        <div class="zy">
+                          <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
+                              href="<%- url_for(post.path) %>">全文</a>
+                        </div>
+                        <!-- S 文章信息 -->
+                        <div class="post-info">
+                          <ul>
+                            <li class="date post-info-item">
+                              <span>
+                                <%- date(post.date, "YYYY-MM-DD" ) %>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- E 文章信息 -->
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <% }); %>
+              </div>
+              <% } %>
+</div>
+<script>
+  const detaHd = document.getElementsByClassName('deta-hd')[0],
+    cateListLink = document.getElementsByClassName('category-list-link');
+  let detaHdCon = detaHd.getAttribute('data-cate');
+  console.log(detaHdCon);
+  for (let i = 0; i < cateListLink.length; i++) {
+    if (cateListLink[i].innerHTML == detaHdCon) {
+      cateListLink[i].setAttribute('style', 'transition: none; background: linear-gradient(-90deg, rgb(121 199 255) 10%, rgb(24 160 219) 100%); color: #fff;');
+      // cateListLink[i].style.transition = 'all .2s';
+    }
+  }
+</script>

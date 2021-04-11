@@ -1,0 +1,118 @@
+<div class="post-wrap">
+  <div class="post">
+    <!-- <div class="post-h-banner" data-img="<%- page.img %>"> -->
+      <!-- <div class="overlaylay"></div> -->
+      <div class="m-tit">
+        <div class="m-tit-con">
+          <div class="ph-cate">
+            <%- list_tags(page.categories, {
+              show_count: false
+            }) %>
+          </div>
+          <h1><%- page.title %></h1>
+        </div>
+      </div>
+    <!-- </div> -->
+    <div class="post-con">
+      <!-- S 文章信息 -->
+      <div class="p-info-title">
+        <div class="u-img">
+          <img src="<%- theme.userhead %>" alt="头像">
+        </div>
+        <div class="u-title">
+          <div class="uname"><span>ler</span></div>
+          <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
+            <% if(page.res && page.res != '原创') { %>
+            <a id="reslink" href="<%- page.resLink %>" target="_blank" title="来源：<%- page.res %>">
+
+              <span class="res">源</span><span class="res-link"><%- page.res %></span>
+            </a>
+            <% } else if(page.res == '原创') { %>
+            <span
+              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #18a0db; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <!-- E 文章信息 -->
+      <div class="post-text">
+        <%- page.content %>
+      </div>
+    </div>
+    <% if(page.tags) { %>
+    <div class="tags clearfix">
+      <%- list_tags(page.tags, {
+            show_count: false
+          }) %>
+    </div>
+    <% } %>
+    <%- js('js/prism') %>
+  </div>
+  <!-- 文章底部导航 -->
+  <% if (page.prev || page.next){ %>
+  <nav id="article-nav" class="clearfix">
+    <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        <strong class="article-nav-caption">&lt;&lt;上一篇</strong>
+        <% if (page.prev.title){ %>
+        <span class="hoverLine hoverLine-thin"><%= page.prev.title %></span>
+        <% } else { %>
+        <span>(无标题)</span>
+        <% } %>
+      </div>
+    </a>
+    <% } %>
+    <% if (page.next){ %>
+    <a href="<%- url_for(page.next.path) %>" id="article-nav-older" class="article-nav-link-wrap"
+      style="text-align: right;">
+      <div class="article-nav-title">
+        <span class="hoverLine hoverLine-thin"><%= page.next.title %></span>
+        <strong class="article-nav-caption">下一篇&gt;&gt;</strong>
+      </div>
+    </a>
+    <% } %>
+  </nav>
+  <% } %>
+  <!-- 底部文章列表 -->
+  <%- partial('_partial/recent') %>
+  <!-- 是否开启文章评论 -->
+  <% if (theme.showComment && page.comment){ %>
+  <hr class="comm-hr">
+  <h3 class="comm-hd">评论</h3>
+  <script src="/js/valines.js"></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: 'vYpfYM8GB7vEYkshouOCPqfU-9Nh9j0Va',
+      appKey: 'W2PWpzkDuwbyUlQqyqUFcgYq',
+      placeholder: '说点什么吧~',
+      requiredFields: ['nick','mail'],
+      recordIP: false,
+      avatar: 'retro'
+    })
+  </script>
+  <!-- <div class="comment clearfix" style="margin-top: 35px;">
+    <div class="split"></div>
+    <section id="isso-thread">
+    </section>
+  </div> -->
+  <% } %>
+  <nav id="toTop">TOP</nav>
+</div>
+<!-- <script src="/js/post20200911.js"></script> -->
+<script id="post-js"></script>
+<script type="text/javascript">
+  let postJs = document.getElementById('post-js');
+  if (screen.width < 1236) {
+    postJs.setAttribute('src', '/js/post-m20200923.js');
+  } else {
+    postJs.setAttribute('src', '/js/post20200917.js');
+  }
+</script>
+<% if (theme.showComment && page.comment){ %>
+<!-- <script data-isso="https://lerisso110.lernb.com/isso/" data-isso-require-email="true"
+  data-isso-reply-notifications="true" data-isso-vote="false" data-isso-css="false" data-isso-require-author="true"
+  src="https://lerisso110.lernb.com/isso/js/embed.min.js"></script> -->
+<% } %>

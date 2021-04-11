@@ -1,0 +1,134 @@
+<% if(page.type != 'resume') { %>
+<div class="post-wrap">
+  <!-- 标签详情页 -->
+  <% if (page.type == 'tags'){ %>
+  <% if (site.tags.length){ %>
+  <div class="post">
+    <div class="post-con">
+      <div class="widget-wrap">
+        <h1 class="deta-hd tag-hd">标签</h1>
+        <div class="widget tagcloud">
+          <%- tagcloud({min_font: 14, max_font: 26}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <!-- 分类详情页 -->
+  <% } else if (page.type == 'categories') { %>
+  <% if (site.categories.length){ %>
+  <div class="post">
+    <div class="post-con">
+      <div class="widget-wrap">
+        <h1 class="deta-hd cate-hd">分类</h1>
+        <div class="widget">
+          <%- list_categories({show_count: theme.showCount}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+  <!-- 移动端底部文章列表 -->
+  <div class="mo-rec">
+  <h3 style="width: 90%; margin: 20px auto 20px; font-size: 20px; font-weight: bold; color: #222;">最近更新</h3>
+  <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
+    <div class="p-list">
+      <ul>
+        <li class="p-list-item clearfix">
+          <!-- S 文章图片 -->
+          <% if(post.img) { %>
+            <div class="post-img">
+              <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
+                <div class="overlay"></div>
+                <img src="<%- post.img %>" alt="文图">
+              </a>
+            </div>
+            <% } else if(post.iframe) { %>
+              <div class="post-img">
+                <iframe class="frame" scrolling="no" name="frame" src="<%- post.iframe %>"
+                  style="width: 100%; border: 0; overflow: hidden;"></iframe>
+              </div>
+              <% } %>
+                <!-- E 文章图片 -->
+                <div class="p-list-item-right clearfix">
+                  <!-- S 标题内容 -->
+                  <div class="content">
+                    <div class="ph-cate">
+                      <%- list_tags(post.categories, {
+                        show_count: false
+                      }) %>
+                    </div>
+                    <!-- S 文章标题 -->
+                    <div class="d-pp-h">
+                      <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
+                          title="<%- post.title %>">
+                          <%= post.title %>
+                        </a></h1>
+                    </div>
+                    <!-- E 文章标题 -->
+
+                    
+                  </div>
+                  <!-- E 标题内容 -->
+                  <div class="zy">
+                    <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
+                        href="<%- url_for(post.path) %>">全文</a>
+                  </div>
+                  <!-- S 文章信息 -->
+                  <div class="post-info">
+                    <ul>
+                      <li class="date post-info-item">
+                        <span>
+                          <%- date(post.date, "YYYY-MM-DD" ) %>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- E 文章信息 -->
+                </div>
+        </li>
+      </ul>
+    </div>
+      <% }); %>
+    </div>
+    </div>
+    <% } else if(page.type == 'resume') { %>
+      <div class="post-wrap" style="width: 100%;">
+      <div class="post">
+        <div class="m-tit">
+          <div class="m-tit-con">
+            <h1><%- page.title %></h1>
+          </div>
+        </div>
+        <div class="post-con">
+          <!-- S 文章信息 -->
+        <div class="p-info-title">
+          <div class="u-img">
+            <img src="/asset/u2.jpg" alt="头像">
+          </div>
+          <div class="u-title">
+            <div class="uname"><span>ler</span></div>
+            <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
+              <% if(page.res && page.res != '原创') { %>
+              <a id="reslink" href="<%- page.resLink %>" target="_blank" title="来源：<%- page.res %>">
+  
+                <span class="res">源</span><span class="res-link"><%- page.res %></span>
+              </a>
+              <% } else if(page.res == '原创') { %>
+              <span
+                style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #18a0db; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <!-- E 文章信息 -->
+          <div class="post-con">
+            <div class="post-text">
+              <%- page.content %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <% } %>

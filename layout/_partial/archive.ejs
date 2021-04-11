@@ -1,0 +1,12 @@
+<div class="bar-item">
+  <% if (site.posts.length){ %>
+  <div class="widget-wrap">
+    <div class="t-h">
+      <h3 class="widget-title">归档</h3>
+    </div>
+    <div class="widget">
+      <%- list_archives({show_count: false, type: theme.archive_type, date_format: 'MMM D'}) %>
+    </div>
+  </div>
+  <% } %>
+</div>

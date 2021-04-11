@@ -1,0 +1,150 @@
+<div class="post-wrap note-wrap">
+  <div class="post note-post">
+    <div class="m-tit">
+      <div class="m-tit-con">
+        <h1><%- page.title %></h1>
+      </div>
+    </div>
+    <div class="post-con">
+      <!-- S 文章信息 -->
+      <div class="p-info-title">
+        <div class="u-img">
+          <img src="<%- theme.userhead %>" alt="头像">
+        </div>
+        <div class="u-title">
+          <div class="uname"><span>ler</span></div>
+          <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
+            <% if(page.res && page.res != '原创') { %>
+            <a id="reslink" href="<%- page.resLink %>" target="_blank" title="来源：<%- page.res %>">
+
+              <span class="res">源</span><span class="res-link"><%- page.res %></span>
+            </a>
+            <% } else if(page.res == '原创') { %>
+            <span
+              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #18a0db; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <!-- E 文章信息 -->
+      <div class="post-text">
+        <%- page.content %>
+      </div>
+    </div>
+    <%- js('js/prism') %>
+  </div>
+  <!-- 底部文章列表 -->
+  <!-- <div class="bar">
+    <h3>近期文章</h3>
+    <div class="bar-item">
+      <ul>
+        <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+        <li class="post-item"><a href="<%- url_for(post.path) %>"><%- post.title %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 是否开启文章评论 -->
+  <% if (theme.showComment && page.comment){ %>
+  <div class="co clearfix">
+  <hr class="comm-hr">
+  <h3 class="comm-hd">评论</h3>
+  <script src="/js/valines.js"></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: 'vYpfYM8GB7vEYkshouOCPqfU-9Nh9j0Va',
+      appKey: 'W2PWpzkDuwbyUlQqyqUFcgYq',
+      placeholder: '说点什么吧~',
+      requiredFields: ['nick','mail'],
+      recordIP: false,
+      avatar: 'retro'
+    })
+  </script>
+  <!-- <div class="comment clearfix" style="margin-top: 35px;">
+    <div class="split"></div>
+    <section id="isso-thread">
+    </section>
+  </div> -->
+</div>
+  <% } %>
+  <nav id="toTop">TOP</nav>
+  <div class="note-bar-btn nonselect">
+    <span class="menu-btn-content nonselect">&times;</span>
+    <span class="bar-btn-menu nonselect">目录</span>
+  </div>
+</div>
+<div class="bar barbar note-bar">
+  <ul class="noteUl">
+    <% site.pages.each(function(page){ %>
+      <% if(page.type == 'note' && page.cateName == 'note-intro'){ %>
+        <h3 class="h3T"><%- page.title %></h3>
+        <li>
+          <% if(is_current(page.path)){ %>
+          <a class="noteActive" href="<%- url_for(page.path) %>" style=" color: #18a0db; background-color: rgb(235, 237, 239);"><%- page.title || '无标题' %></a>
+          <% } else { %>
+          <a href="<%- url_for(page.path) %>"><%- page.title || '无标题' %></a>
+          <% } %>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+  <ul class="noteUl">
+    <% site.pages.each(function(page){ %>
+      <% if(page.type == 'note' && page.cateName == 'HTML'){ %>
+        <h3 class="h3T"><%- page.cateName %></h3>
+        <li>
+          <% if(is_current(page.path)){ %>
+          <a class="noteActive" href="<%- url_for(page.path) %>" style=" color: #18a0db; background-color: rgb(235, 237, 239);"><%- page.title || '无标题' %></a>
+          <% } else { %>
+          <a href="<%- url_for(page.path) %>"><%- page.title || '无标题' %></a>
+          <% } %>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+  <ul class="noteUl">
+    <% site.pages.each(function(page){ %>
+      <% if(page.type == 'note' && page.cateName == 'CSS'){ %>
+        <h3 class="h3T"><%- page.cateName %></h3> 
+        <li>
+          <% if(is_current(page.path)){ %>
+          <a class="noteActive" href="<%- url_for(page.path) %>" style=" color: #18a0db; background-color: rgb(235, 237, 239);"><%- page.title || '无标题' %></a>
+          <% } else { %>
+          <a href="<%- url_for(page.path) %>"><%- page.title || '无标题' %></a>
+          <% } %>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+  <ul class="noteUl">
+    <% site.pages.each(function(page){ %>
+      <% if(page.type == 'note' && page.cateName == 'Javascript'){ %>
+        <h3 class="h3T"><%- page.cateName %></h3>
+        <li>
+          <% if(is_current(page.path)){ %>
+          <a class="noteActive" href="<%- url_for(page.path) %>" style=" color: #18a0db; background-color: rgb(235, 237, 239);"><%- page.title || '无标题' %></a>
+          <% } else { %>
+          <a href="<%- url_for(page.path) %>"><%- page.title || '无标题' %></a>
+          <% } %>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+</div>
+<!-- <script src="/js/post20200911.js"></script> -->
+<script id="post-js"></script>
+<script type="text/javascript">
+  let postJs = document.getElementById('post-js');
+  if (screen.width < 1236) {
+    postJs.setAttribute('src', '/js/post-m20200923.js');
+  } else {
+    postJs.setAttribute('src', '/js/post20200917.js');
+  }
+</script>
+<% if (theme.showComment && page.comment){ %>
+<!-- <script data-isso="https://lerisso110.lernb.com/isso/" data-isso-require-email="true"
+  data-isso-reply-notifications="true" data-isso-vote="false" data-isso-css="false" data-isso-require-author="true"
+  src="https://lerisso110.lernb.com/isso/js/embed.min.js"></script> -->
+<% } %>

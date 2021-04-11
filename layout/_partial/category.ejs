@@ -1,0 +1,15 @@
+<div class="bar-item">
+  <% if (site.categories.length){ %>
+    <div class="widget-wrap">
+      <div class="t-h hCate">
+        <h3>分类</h3>
+        <!-- <a href="/categories" style="float: right; font-size: 12px; margin-top: 11px; color: #c0c0c0;">更多>></a> -->
+      </div>
+      <div class="widget category">
+        <%- list_categories({show_count: theme.showCount}) %>
+      </div>
+      <!-- <div class="overhi"></div> -->
+    </div>
+    <% } %>
+      <!-- <div class="overhi"></div> -->
+</div>

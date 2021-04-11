@@ -1,0 +1,33 @@
+menu:
+  Home: /
+  Archives: /archives
+  categories: /categories
+  tags: /tags
+  resume: /resume
+
+sitename: LERNB
+sitedomain: https://lernb.com
+siteadmin: lernb.com
+siteemail: liuenrg@foxmail.com
+servername: Tencent
+serverwebsite: https://cloud.tencent.com/
+siteICP: 苏ICP备2020049244号
+
+notice: 
+
+title: LERNB | 网络日志
+description: LERNB - 学习、记录、分享 - LERNB
+keywords: LERNB,技术,分享,博客,IT新闻,互联网,Internet,数码,科技,网络,科普,通信,智能手机,blog
+favicon: /asset/favicon.png
+userhead: /asset/u2.jpg
+
+# 侧栏插件
+showRecent: true
+showTag: true
+showArchive: false
+showPostMenu: true
+showCategory: true
+showCount: true
+showComment: true
+
+headerRecent: false

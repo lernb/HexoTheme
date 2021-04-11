@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<%- partial('_partial/head') %>
+
+<body class="line-numbers">
+  <div class="pgbar">
+    <div class="bar-in"></div>
+  </div>
+  <script src="/js/layouts@20200929.js"></script>
+  <!-- <script id="header-js"></script>
+  <script type="text/javascript">
+    let headerJs = document.getElementById('header-js');
+    if (screen.width < 768) {
+      headerJs.setAttribute('src', '');
+    } else {
+      headerJs.setAttribute('src', '/js/layouts@20200921.js');
+    }
+  </script> -->
+<!-- <body onload="prettyPrint();" class="line-numbers"> 旧款代码高亮 -->
+  <%- partial('_partial/header') %>
+    <div class="wrap clearfix">
+      <% if (is_home()) { %>
+        <!-- <div class="banner-back" style="position: relative;">
+          <div class="banner-content">
+            <img class="au-head" src="/asset/u2.jpg" alt="">
+            <p>生活就是要大胆一点</p>
+          </div>
+        </div> -->
+      <% } %>
+    <div class="wrap-content clearfix">
+      <% if (page.type != 'note' && page.type != 'resume') { %>
+      <div class="bar barbar">
+        <!-- <div class="barside"> -->
+        <!-- S 侧栏插件 -->
+        <% if (is_home()){ %>
+        <%- partial('_partial/author') %>
+        <% } %>
+
+        <!-- 最近文章 -->
+        <% if (!is_home() && theme.showRecent){ %>
+        <%- partial('_partial/recent') %>
+        <% } %>
+
+        <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
+
+        <!-- 分类 -->
+        <% if (!is_category() && !is_home() && page.type != 'categories' && theme.showCategory){ %>
+          <%- partial('_partial/category') %>
+        <% } %>
+          
+        <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
+          
+        <!-- 归档 -->
+        <% if (theme.showArchive){ %>
+          <%- partial('_partial/archive') %>
+        <% } %>
+            
+        <!-- 标签 -->
+        <% if (!is_tag() && page.type != 'tags'){ %>
+          <%- partial('_partial/tag') %>
+        <% } %>
+
+        <!-- 文章目录 -->
+        <% if (is_post() && theme.showPostMenu){ %>
+          <%- partial('_partial/menu') %>
+          <% } %>
+          <!-- E 侧栏插件 -->
+        </div>
+        <% } %>
+        <!-- <%- theme.notice %> -->
+        <%- body %>
+      </div>
+    </div>
+    <% if (page.type != 'note'){ %>
+      <%- partial('_partial/footer') %>
+    <% } %>
+  <script id="layout-js"></script>
+  <script type="text/javascript">
+    let layoutJs = document.getElementById('layout-js');
+    if (screen.width < 1236) {
+      layoutJs.setAttribute('src', '/js/layout-m20200920.js');
+    }
+  </script>
+</body>
+
+</html>

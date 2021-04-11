@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .banner {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 清除浮动 */
+    .slide::before,
+    .slide:after {
+      content: ' ';
+      display: table;
+    }
+
+    .slide::after {
+      clear: both;
+    }
+
+    .slide-item {
+      float: left;
+    }
+
+    .slide-item img {
+      width: 100%;
+    }
+
+    .btn {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      top: 50%;
+      margin-top: -20px;
+      background-color: #6363636e;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      font-size: 20px;
+      backdrop-filter: blur(8px);
+      transition: all .4s;
+    }
+
+    .btnPre {
+      left: 10px;
+    }
+
+    .btnNext {
+      right: 10px;
+    }
+
+    /* 底部小圆点 */
+    .dots-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      margin-left: -50px;
+      padding: 0 5px;
+      width: 90px;
+      height: 15px;
+      border-radius: 10px;
+      background-color: #40404040;
+      backdrop-filter: blur(8px);
+    }
+
+    .dots-container span {
+      display: block;
+      border: 4px solid #ddd;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transition: width .2s;
+      cursor: pointer;
+    }
+
+    .dots-container .active {
+      width: 5px;
+      border-radius: 30%;
+      border-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <div class="slide">
+      <!-- 图片区 -->
+      <div class="slide-item">
+        <img src="./lunboimg/c1.jpg" alt="">
+      </div>
+      <div class="slide-item">
+        <img src="./lunboimg/c2.jpg" alt="">
+      </div>
+      <div class="slide-item">
+        <img src="./lunboimg/c3.jpg" alt="">
+      </div>
+      <div class="slide-item">
+        <img src="./lunboimg/c4.jpg" alt="">
+      </div>
+      <div class="slide-item">
+        <img src="./lunboimg/c5.jpg" alt="">
+      </div>
+    </div>
+    <!-- 底部小圆点 -->
+    <div class="dots-container">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- 左右两侧按钮 -->
+    <div class="btn btnPre">&lt;</div>
+    <div class="btn btnNext">&gt;</div>
+  </div>
+  <script>
+    window.onload = function () {
+      function $(cName) {
+        return document.getElementsByClassName(cName);
+      }
+      const banner = $('banner')[0],
+        slide = $('slide')[0],
+        slideItem = $('slide-item'),
+        btnPre = $('btnPre')[0],
+        btnNext = $('btnNext')[0],
+        span = document.getElementsByTagName('span'),
+        img = document.getElementsByTagName('img')[0];
+
+      let index = 1, // 定义图片下标，第一张index为1
+        timer = null, timer2, // 定时器
+        duration = '.3s', // 定义动画过度
+        bannerWidth = banner.currentStyle ? banner.currentStyle.width.match(/\d+/g)[0] : window.getComputedStyle(banner, null).width.match(/\d+/g)[0];
+
+      // 处理Safari兼容问题
+      banner.style.width = bannerWidth + 'px';
+      
+      for (let i = 0; i < slideItem.length; i++) {
+        slideItem[i].style.width = banner.offsetWidth + 'px';
+      }
+
+      // 在头部增加一张图，在末尾增加一张图
+      slide.insertBefore(slideItem[slideItem.length - 1].cloneNode(true), slideItem[0]);
+      slide.appendChild(slideItem[1].cloneNode(true));
+      slide.style.width = `${(slideItem.length) * bannerWidth}px`; // 定义图片项目容器总宽度，每张图宽度为500
+      slide.style.transform = `translateX(-${bannerWidth}px)`; // 初始化轮播位置
+
+
+      // 右侧按钮
+      btnNext.onclick = function () {
+        // 节流处理方式
+        // if (!timer) {
+        //   resetDots();
+        //   slide.style.transition = `transform ${duration}`;
+        //   slide.style.transform = `translateX(-${++index * bannerWidth}px)`; // 每次滚动
+        //   if (index == slideItem.length - 1) {  // 处理滚动到最后一张即逻辑第一张小圆点点亮位置
+        //     span[0].className = 'active';
+        //   } else {
+        //     span[index - 1].className = 'active';
+        //   }
+        //   timer = setTimeout(() => {
+        //     if (index > slideItem.length - 2) { // 处理滚动到尾部
+        //       index = 1;
+        //       slide.style.transition = 'none'; // 关闭过渡效果
+        //       slide.style.transform = `translateX(-${index * bannerWidth}px)`; // 将整个slide移至逻辑第一张位置，即实际第二张
+        //     }
+        //     timer = null;
+        //   }, 500);
+        // }
+        
+        // 未使用节流方式
+        resetDots();
+        if (index > slideItem.length - 2) { // 处理滚动到尾部
+          index = 1;
+          slide.style.transition = 'none'; // 关闭过渡效果
+          slide.style.transform = `translateX(-${index * bannerWidth}px)`; // 将整个slide移至逻辑第一张位置，即实际第二张
+          timer = setTimeout(() => { // 定时延迟确保以上两步操作先完成执行顺序
+            slide.style.transition = duration;
+            slide.style.transform = `translateX(-${++index * bannerWidth}px)`; // 打开过渡效果并继续变换位置实现无缝滚动效果
+            span[index - 1].className = 'dots-item active'; // 设置变换完成后对应小圆点点亮
+            clearTimeout(timer);
+          }, 16);
+        } else { // 正常滚动
+          slide.style.transition = duration;
+          slide.style.transform = `translateX(-${++index * bannerWidth}px)`; // 每次滚动
+          if (index == slideItem.length - 1) {  // 处理滚动到最后一张即逻辑第一张小圆点点亮位置
+            span[0].className = 'dots-item active';
+          } else {
+            span[index - 1].className = 'dots-item active';
+          }
+        }
+      }
+      // 左侧按钮
+      btnPre.onclick = function () {
+        resetDots();
+        if (index < 1) { // 处理滚动到头部
+          index = slideItem.length - 2;
+          slide.style.transition = 'none'; // 关闭过渡效果
+          slide.style.transform = `translateX(-${index * bannerWidth}px)`; // 将整个slide移至逻辑最后一张位置，即实际倒数第二张
+          timer = setTimeout(() => { // 定时延迟确保以上两步操作先完成执行顺序
+            slide.style.transition = duration;
+            slide.style.transform = `translateX(-${--index * bannerWidth}px)`; // 打开过渡效果并继续变换位置实现无缝滚动效果
+            span[index - 1].className = 'active'; // 设置变换完成后对应小圆点点亮
+            clearTimeout(timer);
+          }, 16);
+        } else { // 正常滚动
+          slide.style.transition = duration;
+          slide.style.transform = `translateX(-${--index * bannerWidth}px)`; // 每次滚动
+          if (index == 0) { // 处理滚动到第一张即逻辑最后一张小圆点点亮位置
+            span[span.length - 1].className = 'active';
+          } else {
+            span[index - 1].className = 'active';
+          }
+        }
+      }
+      // 自动循环播放定时器
+      timer2 = setInterval(() => {
+        btnNext.onclick();
+      }, 3000);
+
+      function resetDots() { // 小圆点样式重置方法
+        for (let i = 0; i < span.length; i++) {
+          span[i].className = '';
+        }
+      }
+
+      function moveDots() { // 底部小圆点点按事件
+        for (let i = 0; i < span.length; i++) {
+          (function (n) {
+            span[n].onclick = function () {
+              resetDots();
+              span[n].className = 'active';
+              slide.style.transition = duration;
+              slide.style.transform = `translateX(-${(n + 1) * bannerWidth}px)`;
+              index = n + 1;
+            }
+          })(i);
+        }
+      }
+      moveDots();
+      // 鼠标移入移出暂停、继续播放循环
+      banner.addEventListener("mouseover", function () {
+        clearInterval(timer2);
+      });
+      banner.addEventListener("mouseout", function () {
+        timer2 = setInterval(() => {
+          btnNext.onclick();
+        }, 2000);
+      });
+      window.parent.document.all("frame").style.height = banner.offsetHeight + 'px';
+    }
+  </script>
+</body>
+
+</html>
+<script>
+  // window.onload = function () {
+    // window.parent.document.all("frame").style.height = banner.offsetHeight + 'px';
+  // }
+  // setTimeout(() => {
+  // }, 0);
+</script>

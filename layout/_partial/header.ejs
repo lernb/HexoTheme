@@ -1,0 +1,76 @@
+<div class="headhead">
+  <div class="header-wrap" id="he" style="height: 55px;">
+    <div class="blur-bg"></div>
+    <% if (page.type == 'note'){ %>
+    <div class="head">
+    <% } else { %>
+    <div class="head">
+    <% } %>
+      <button onclick="clk()">
+        <!-- <i class="fa fa-bars" id="show" aria-hidden="true"></i>
+        <i class="fa fa-times" id="close" aria-hidden="true"></i> -->
+        <span id="show"><i></i></span>
+        <span id="close"></span>
+      </button>
+      <h1 style="display: inline-block;">
+        <a class="header-img" href="/" target="_self" title="LERNB">
+          <%- theme.sitename %>
+        </a>
+      </h1>
+      <ul id="header-btn">
+        <li>
+          <% if (is_home()){ %>
+          <a href="/" class="home-btn hoverLine hoverLineActive">首页</a>
+          <% } else { %>
+          <a href="/" class="home-btn hoverLine">首页</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (page.title == 'note' || page.type == 'note'){ %>
+          <a href="/note/note-intro.html" class="hoverLine hoverLineActive" style="padding-left: 0;">前端</a>
+          <% } else { %>
+          <a href="/note/note-intro.html" class="hoverLine" style="padding-left: 0;">前端</a>
+          <% } %>
+        </li>
+        <!-- <li> -->
+          <% if (page.type == 'tags' || is_tag()){ %>
+          <!-- <a href="/tags" class="tag-btn hoverLine hoverLineActive">标签</a> -->
+          <% } else { %>
+          <!-- <a href="/tags" class="tag-btn hoverLine">标签</a> -->
+          <% } %>
+        <!-- </li> -->
+        <!-- <li> -->
+          <% if (page.type == 'categories' || is_category()){ %>
+          <!-- <a href="/categories" class="cate-btn hoverLine hoverLineActive">分类</a> -->
+          <% } else { %>
+          <!-- <a href="/categories" class="cate-btn hoverLine">分类</a> -->
+          <% } %>
+        <!-- </li> -->
+      </ul>
+    </div>
+    <div id="hcata">
+      <!-- <img src="/asset/u2.jpg" alt="头像" style="display: block; width: 100px; height: 100px; border-radius: 50%; margin: 30px auto 30px;">
+      <div class="barauthor" style="text-align: center; font-family: cmFont; font-size: 1.6rem; color: #18a0db;">lernb.</div> -->
+      <%- partial('_partial/author') %>
+      <div class="headerMenu">
+        <a href="/">首页</a>
+        <a href="/tags">标签</a>
+        <a href="/note/note-intro.html">学习</a>
+        <!-- <a href="/categories">分类</a> -->
+      </div>
+      <% if (theme.headerRecent){ %>
+      <div class="bar">
+        <h3>近期文章</h3>
+        <div class="bar-item">
+          <ul>
+            <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+            <!-- <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span> -->
+            <li class="post-item"><a href="<%- url_for(post.path) %>"><%- post.title %></a></li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
