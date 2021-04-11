@@ -1919,6 +1919,7 @@ html {
   color: #fff;
 }
 
+/* 分类标题改为并列 */
 .bar .widget .category-list .category-list-item {
   display: inline-block;
   position: relative;
