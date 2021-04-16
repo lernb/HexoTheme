@@ -7,7 +7,7 @@
 }
 
 .wrap-bd {
-  width: 840px;
+  width: 750px;
 }
 
 .wrap-bd .rec {
@@ -187,9 +187,10 @@
 }
 
 .p-list .zy {
-  /* height: 65px; */
-  font-size: 14px;
-  color: #777;
+  height: 100px;
+  font-size: 15px;
+  color: #121212;
+  word-break: break-all;
 }
 
 .p-list .zy .readmore {
@@ -222,7 +223,7 @@
   left: 0;
 }
 
-.p-list .p-list-item .content .ph-cate a {
+.p-list .p-list-item .ph-cate a {
   padding: 2px 12px;
   height: 20px;
   line-height: 20px;
@@ -273,8 +274,8 @@
 } */
 
 .p-list .p-list-item .img-pc {
-  float: left;
-  width: calc(100% - 315px);
+  /* float: left;
+  width: calc(100% - 315px); */
   height: 100%;
 }
 
@@ -454,7 +455,7 @@
   }
   .p-list-item .post-info {
     border-bottom: 0;
-    margin: 0 0 22px 22px;
+    margin: 0 0 10px 22px;
   }
   .post-info .date::before {
     margin: 0;
@@ -766,13 +767,13 @@ strong {
 }
 
 .wrap-content {
-  width: 1200px;
+  width: 1100px;
   margin: 0 auto;
 }
 
 .foot-content {
   width: 100%;
-  background-color: #303846;
+  /* background-color: #303846; */
 }
 
 .wrap-content a {
@@ -1193,7 +1194,7 @@ strong {
 }
 
 .head {
-  width: 1200px;
+  width: 1100px;
   /* padding: 0 16px; */
   margin: 0 auto;
   height: 55px;
@@ -1558,7 +1559,7 @@ html {
 /* S bar */
 
 .bar {
-  width: 320px;
+  width: 300px;
 }
 
 .barbar {
@@ -1923,7 +1924,7 @@ html {
 .bar .widget .category-list .category-list-item {
   display: inline-block;
   position: relative;
-  width: 42%;
+  width: 41%;
   padding: 4px 10px 4px;
   margin-bottom: 10px;
   border-radius: 8px;
@@ -2276,7 +2277,7 @@ html {
   width: calc(((100% - 1200px) / 2) + 255px);
   height: 100%;
   background-color: #F5F7F9;
-  padding-left: calc((100% - 1200px) / 2);
+  padding-left: calc((100% - 1100px) / 2);
   padding-top: 30px;
   border-right: 1px solid #E6ECF1;
   overflow: auto;
@@ -2294,7 +2295,7 @@ html {
 /* S post */
 
 .post-wrap {
-  width: 780px;
+  width: 750px;
   float: left;
 }
 
