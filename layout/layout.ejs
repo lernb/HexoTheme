@@ -45,7 +45,7 @@
         <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
 
         <!-- 分类 -->
-        <% if (!is_category() && !is_home() && page.type != 'categories' && theme.showCategory){ %>
+        <% if (page.type != 'categories' && theme.showCategory){ %>
           <%- partial('_partial/category') %>
         <% } %>
           

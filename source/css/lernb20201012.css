@@ -7,7 +7,7 @@
 }
 
 .wrap-bd {
-  width: 750px;
+  width: 720px;
 }
 
 .wrap-bd .rec {
@@ -18,6 +18,7 @@
 }
 
 #cate-hd {
+  display: none;
   box-sizing: border-box;
   overflow-x: auto;
   white-space: nowrap;
@@ -189,9 +190,15 @@
 
 .p-list .zy {
   margin-top: 3px;
-  font-size: 15px;
+  font-size: 14px;
   color: #121212;
   word-break: break-all;
+  line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .p-list .zy .readmore {
@@ -341,7 +348,7 @@
   /* height: 42px; */
   line-height: 1.5;
   /* overflow: hidden; */
-  font-size: 22px;
+  font-size: 19px;
   /* vertical-align: top; */
 }
 
@@ -460,7 +467,7 @@
   }
   .p-list-item .post-info {
     border-bottom: 0;
-    margin: 0 0 10px 22px;
+    margin: 5px 0 10px 22px;
   }
   .post-info .date::before {
     margin: 0;
@@ -520,6 +527,7 @@
     font-size: 25px;
   }
   .p-list .p-list-item-title a {
+    display: inline-block;
     width: auto;
     /* 强制同一行内显示文本 */
     white-space: normal;
@@ -773,7 +781,7 @@ strong {
 }
 
 .wrap-content {
-  width: 1100px;
+  width: 1070px;
   margin: 0 auto;
 }
 
@@ -1024,6 +1032,12 @@ strong {
   .wrap-content {
     width: 100%;
   }
+  #cate-hd {
+    display: block;
+  }
+  .wrap-bd .deta-hd.cate-hd {
+    display: none;
+  }
   #fif {
     width: 100%;
     height: 100px;
@@ -1200,7 +1214,7 @@ strong {
 }
 
 .head {
-  width: 1100px;
+  width: 1070px;
   /* padding: 0 16px; */
   margin: 0 auto;
   height: 55px;
@@ -1927,6 +1941,7 @@ html {
 }
 
 /* 分类标题改为并列 */
+
 .bar .widget .category-list .category-list-item {
   display: inline-block;
   position: relative;
@@ -2268,7 +2283,7 @@ html {
 .wrap-content .note-wrap {
   float: right;
   width: 750px;
-  margin-right: 110px;
+  margin-right: 45px;
 }
 
 .wrap-content .note-post {
@@ -2280,10 +2295,10 @@ html {
   left: 0;
   top: 55px;
   box-sizing: border-box;
-  width: calc(((100% - 1200px) / 2) + 255px);
+  width: calc(((100% - 1200px) / 2) + 285px);
   height: 100%;
   background-color: #F5F7F9;
-  padding-left: calc((100% - 1100px) / 2);
+  padding-left: calc((100% - 1070px) / 2);
   padding-top: 30px;
   border-right: 1px solid #E6ECF1;
   overflow: auto;
@@ -2301,7 +2316,7 @@ html {
 /* S post */
 
 .post-wrap {
-  width: 750px;
+  width: 720px;
   float: left;
 }
 
