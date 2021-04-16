@@ -1858,7 +1858,7 @@ html {
 }
 
 .bar .bar-item a {
-  font-size: 15px;
+  font-size: 14px;
   /* color: #062743bd; */
 }
 
@@ -1924,7 +1924,7 @@ html {
   display: inline-block;
   position: relative;
   width: 42%;
-  padding: 6px 10px 6px;
+  padding: 4px 10px 4px;
   margin-bottom: 10px;
   border-radius: 8px;
   box-shadow: 0 0 12px 0px rgb(24 160 219 / 25%);
