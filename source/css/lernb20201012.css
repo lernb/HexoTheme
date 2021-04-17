@@ -7,7 +7,7 @@
 }
 
 .wrap-bd {
-  width: 720px;
+  width: 700px;
 }
 
 .wrap-bd .rec {
@@ -126,7 +126,7 @@
   /* overflow: hidden; */
   border-radius: 10px;
   margin-bottom: 30px;
-  height: 180px;
+  max-height: 233px;
   background-color: #fff;
   /* box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); */
   transition: all 0.3s;
@@ -190,7 +190,7 @@
 
 .p-list .zy {
   margin-top: 3px;
-  font-size: 14px;
+  font-size: 15px;
   color: #121212;
   word-break: break-all;
   line-height: 1.6;
@@ -246,7 +246,7 @@
 }
 
 .p-list .p-list-item .content {
-  height: 156px;
+  height: 138px;
 }
 
 .p-list .p-list-item .content .ph-cate a:hover {
@@ -274,9 +274,9 @@
 
 .p-list .p-list-item .post-img {
   float: left;
-  width: 270px;
-  height: 180px;
-  overflow: hidden;
+  width: 240px;
+  height: 160px;
+  /* overflow: hidden; */
   /* transform: scale(.9); */
   margin-right: 20px;
 }
@@ -296,6 +296,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  border: 1px solid #eee;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -343,12 +344,16 @@
   overflow: hidden;
 }
 
+.d-pp-h {
+  margin-bottom: 5px;
+}
+
 .p-list .p-list-item-title {
   display: inline;
   /* height: 42px; */
   line-height: 1.5;
   /* overflow: hidden; */
-  font-size: 19px;
+  font-size: 22px;
   /* vertical-align: top; */
 }
 
