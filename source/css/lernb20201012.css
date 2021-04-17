@@ -3439,6 +3439,9 @@ code {
     width: 90%;
     margin: 0 auto 15px;
   }
+  .wrap-bd .deta-hd.plist-deta-hd {
+    display: none;
+  }
   .post-wrap .bar h3 {
     font-size: 16px;
     margin-bottom: 20px;
