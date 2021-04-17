@@ -3110,7 +3110,7 @@ code {
 #article-nav {
   /* display: table; */
   width: 100%;
-  margin: 20px auto;
+  margin: 40px auto 20px;
 }
 
 #article-nav a {
@@ -3128,18 +3128,41 @@ code {
   float: right;
 }
 
+#article-nav .article-nav-link-wrap {
+  width: 40%;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, rgb(121 199 255) 10%, rgb(24 160 219) 100%);
+  /* box-shadow: 0 0 12px 0px rgb(24 160 219 / 25%); */
+  color: #fff;
+  transition: all .2s;
+}
+
+#article-nav .article-nav-link-wrap:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px 0px rgb(24 160 219 / 25%);
+}
+
+#article-nav .article-nav-link-wrap:hover::before {
+  width: 0;
+}
+
+#article-nav .article-nav-link-wrap span:hover::before {
+  width: 0;
+}
+
 #article-nav a span {
   display: inline-block;
-  max-width: 80%;
+  width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   vertical-align: bottom;
 }
 
-#article-nav a:hover {
+/* #article-nav a:hover {
   color: #18a0db;
-}
+} */
 
 #article-nav a:hover::before {
   width: 0;
@@ -3429,8 +3452,11 @@ code {
   .post-wrap .bar .post-item a {
     width: 90%;
   }
-  #article-nav a span {
+  /* #article-nav a span {
     max-width: 58%;
+  } */
+  #article-nav .article-nav-link-wrap:hover {
+    transform: initial;
   }
   .wrap-bd .bar h3 {
     font-size: 16px;

@@ -54,7 +54,7 @@
     <% if (page.prev){ %>
     <a href="<%- url_for(page.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-title">
-        <strong class="article-nav-caption">&lt;&lt;上一篇</strong>
+        <strong class="article-nav-caption" style="display: block;">&lt;&lt;上一篇</strong>
         <% if (page.prev.title){ %>
         <span class="hoverLine hoverLine-thin"><%= page.prev.title %></span>
         <% } else { %>
@@ -67,8 +67,8 @@
     <a href="<%- url_for(page.next.path) %>" id="article-nav-older" class="article-nav-link-wrap"
       style="text-align: right;">
       <div class="article-nav-title">
+        <strong class="article-nav-caption" style="display: block;">下一篇&gt;&gt;</strong>
         <span class="hoverLine hoverLine-thin"><%= page.next.title %></span>
-        <strong class="article-nav-caption">下一篇&gt;&gt;</strong>
       </div>
     </a>
     <% } %>
