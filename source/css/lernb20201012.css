@@ -124,12 +124,18 @@
 .p-list .p-list-item {
   position: relative;
   /* overflow: hidden; */
-  border-radius: 10px;
-  margin-bottom: 30px;
-  max-height: 233px;
+  /* border-radius: 10px; */
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+  max-height: 236px;
   background-color: #fff;
   /* box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); */
+  border-bottom: 1px solid #eee;
   transition: all 0.3s;
+}
+
+.p-list .p-list-item:last-child {
+  border-bottom: none;
 }
 
 .p-list:hover>ul::before {
@@ -274,8 +280,8 @@
 
 .p-list .p-list-item .post-img {
   float: left;
-  width: 240px;
-  height: 160px;
+  width: 210px;
+  height: 140px;
   /* overflow: hidden; */
   /* transform: scale(.9); */
   margin-right: 20px;
@@ -345,7 +351,7 @@
 }
 
 .d-pp-h {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .p-list .p-list-item-title {
