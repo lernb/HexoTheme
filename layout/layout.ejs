@@ -21,19 +21,18 @@
   <%- partial('_partial/header') %>
     <div class="wrap clearfix">
       <% if (is_home()) { %>
-        <!-- <div class="banner-back" style="position: relative;">
+        <div class="banner-back" style="position: relative;">
           <div class="banner-content">
             <img class="au-head" src="/asset/u2.jpg" alt="">
-            <p>生活就是要大胆一点</p>
           </div>
-        </div> -->
+        </div>
       <% } %>
     <div class="wrap-content clearfix">
       <% if (page.type != 'note' && page.type != 'resume') { %>
       <div class="bar barbar">
         <!-- <div class="barside"> -->
         <!-- S 侧栏插件 -->
-        <% if (is_home()){ %>
+        <% if (is_home() && false){ %>
         <%- partial('_partial/author') %>
         <% } %>
 
@@ -79,7 +78,7 @@
   <script type="text/javascript">
     let layoutJs = document.getElementById('layout-js');
     if (screen.width < 1236) {
-      layoutJs.setAttribute('src', '/js/layout-m20200920.js');
+      layoutJs.setAttribute('src', '/js/layout-m20200920.js?v=0418');
     }
   </script>
 </body>
