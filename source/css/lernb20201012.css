@@ -2660,9 +2660,9 @@ html {
   position: relative;
   margin-bottom: 25px;
   padding: 15px 25px;
-  background-color: #fbfbfb;
+  /* background-color: #fbfbfb; */
   border-left: 4px solid #888;
-  color: #657079;
+  color: #aaa;
   border-radius: 4px;
 }
 
@@ -3416,8 +3416,10 @@ code {
     filter: blur(2px);
   }
   .post-wrap .post-text img {
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: initial;
+    /* margin: 0 auto; */
+    width: calc(100% / 0.9);
+    margin-left: calc((100% / 0.9) * -0.05);
   }
   .post-text blockquote {
     box-sizing: border-box;
