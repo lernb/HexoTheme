@@ -679,6 +679,16 @@ strong {
   width: 100%;
   background-color: #fff;
   padding: 0 0 30px 0;
+  z-index: 99;
+}
+
+.container {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 -11px 18px -6px rgb(154 154 154 / 32%);
 }
 
 .banner-back {
@@ -688,12 +698,18 @@ strong {
   margin: 0 auto;
   /* margin-bottom: 20px; */
   /* margin-top: 80px; */
-  background-image: url('/asset/typ.jpg');
-  background-size: cover;
-  background-position: 20% center;
-  background-attachment: fixed;
   /* border-radius: 10px; */
-  box-shadow: 0 -15px 10px -8px rgb(154 154 154 / 32%) inset;
+}
+
+.banner-back::before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 350px;
+  background: url('/asset/typ.jpg') center 0 no-repeat;
+  background-size: cover;
 }
 
 .banner-back .banner-content {

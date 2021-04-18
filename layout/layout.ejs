@@ -27,6 +27,7 @@
           </div>
         </div>
       <% } %>
+  <div class="container">
     <div class="wrap-content clearfix">
       <% if (page.type != 'note' && page.type != 'resume') { %>
       <div class="bar barbar">
@@ -70,6 +71,7 @@
         <!-- <%- theme.notice %> -->
         <%- body %>
       </div>
+    </div>
     </div>
     <% if (page.type != 'note'){ %>
       <%- partial('_partial/footer') %>
