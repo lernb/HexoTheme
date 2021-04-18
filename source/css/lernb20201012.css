@@ -81,7 +81,7 @@
   margin-right: 10px;
   font-size: 14px;
   color: #7c7c7c;
-  background-color: #eaeaea;
+  background-color: #eee;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -126,8 +126,8 @@
   /* overflow: hidden; */
   /* border-radius: 10px; */
   margin-bottom: 20px;
-  padding-bottom: 25px;
-  max-height: 236px;
+  padding-bottom: 15px;
+  height: 217px;
   background-color: #fff;
   /* box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); */
   border-bottom: 1px solid #eee;
@@ -252,7 +252,7 @@
 }
 
 .p-list .p-list-item .content {
-  height: 138px;
+  height: 118px;
 }
 
 .p-list .p-list-item .content .ph-cate a:hover {
@@ -355,9 +355,8 @@
 }
 
 .p-list .p-list-item-title {
-  display: inline;
   /* height: 42px; */
-  line-height: 1.5;
+  line-height: 1;
   /* overflow: hidden; */
   font-size: 22px;
   /* vertical-align: top; */
@@ -478,7 +477,7 @@
   }
   .p-list-item .post-info {
     border-bottom: 0;
-    margin: 5px 0 10px 22px;
+    /* margin: 5px 0 10px 22px; */
   }
   .post-info .date::before {
     margin: 0;
@@ -502,9 +501,9 @@
   /* .d-pp-h {
     min-height: 50px;
   } */
-  .p-list .p-list-item .post-img a {
+  /* .p-list .p-list-item .post-img a {
     border-radius: 0;
-  }
+  } */
   .p-list .p-list-item .post-img {
     padding: 0;
     width: 100%;
@@ -516,9 +515,10 @@
     display: none;
   }
   .p-list-item .post-img img {
-    border-top-left-radius: 10px;
+    /* border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    border-radius: 10px;
     min-height: auto;
     min-height: auto;
   }
@@ -535,7 +535,7 @@
   .p-list .p-list-item-title {
     width: auto;
     height: auto;
-    font-size: 25px;
+    font-size: 22px;
   }
   .p-list .p-list-item-title a {
     display: inline-block;
@@ -558,7 +558,7 @@
     overflow: hidden;
   }
   .p-list .p-list-item {
-    box-shadow: 0 0 20px 1px rgba(146, 146, 146, 0.15);
+    /* box-shadow: 0 0 20px 1px rgba(146, 146, 146, 0.15); */
     max-width: 372px;
     height: auto;
     -webkit-touch-callout: none;
@@ -576,10 +576,10 @@
     float: none;
     width: 100%;
   }
-  .p-list .p-list-item:hover {
+  /* .p-list .p-list-item:hover {
     transform: initial;
     box-shadow: 0 0 20px 1px rgba(146, 146, 146, 0.15);
-  }
+  } */
   .overlay {
     display: none;
   }
