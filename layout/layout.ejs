@@ -27,7 +27,11 @@
           </div>
         </div>
       <% } %>
+  <% if (is_post()){ %>
+  <div class="container" style="padding-top: 80px;">
+  <% } else { %>
   <div class="container">
+  <% } %>
     <div class="wrap-content clearfix">
       <% if (page.type != 'note' && page.type != 'resume') { %>
       <div class="bar barbar">
