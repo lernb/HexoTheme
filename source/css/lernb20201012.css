@@ -717,7 +717,7 @@ strong {
   right: 0;
   left: 0;
   height: 300px;
-  background: url('/asset/typ.jpg') center 0 no-repeat;
+  background: url('/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
 
@@ -820,7 +820,7 @@ strong {
 }
 
 .wrap-content {
-  width: 1070px;
+  width: 1050px;
   margin: 0 auto;
   padding-top: 20px;
 }
@@ -1254,7 +1254,7 @@ strong {
 }
 
 .head {
-  width: 1070px;
+  width: 1050px;
   /* padding: 0 16px; */
   margin: 0 auto;
   height: 55px;
@@ -2357,7 +2357,7 @@ html {
 /* S post */
 
 .post-wrap {
-  width: 720px;
+  width: 700px;
   float: left;
 }
 
