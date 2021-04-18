@@ -20,17 +20,17 @@
 <!-- <body onload="prettyPrint();" class="line-numbers"> 旧款代码高亮 -->
   <%- partial('_partial/header') %>
     <div class="wrap clearfix">
-      <% if (is_home()) { %>
+      <% if (!is_post() && !is_tag() && page.type != 'tags') { %>
         <div class="banner-back" style="position: relative;">
           <div class="banner-content">
             <img class="au-head" src="/asset/u2.jpg" alt="">
           </div>
         </div>
       <% } %>
-  <% if (is_post()){ %>
-  <div class="container" style="padding-top: 80px;">
+  <% if (is_post() || is_tag() || page.type == 'tags'){ %>
+  <div class="container" style="margin-top: 60px; box-shadow: initial;">
   <% } else { %>
-  <div class="container">
+    <div class="container">
   <% } %>
     <div class="wrap-content clearfix">
       <% if (page.type != 'note' && page.type != 'resume') { %>
