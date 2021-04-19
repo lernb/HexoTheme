@@ -698,7 +698,7 @@ strong {
   position: relative;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  box-shadow: 0 -11px 18px -6px rgb(154 154 154 / 32%);
+  box-shadow: 0 -11px 18px -6px rgb(154 154 154 / 25%);
 }
 
 .banner-back {
