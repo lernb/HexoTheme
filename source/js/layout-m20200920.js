@@ -1,5 +1,6 @@
 // let layer = document.getElementById("layer");
 const header = document.getElementById("he"),
+  headlo = document.getElementsByClassName('headlo')[0],
   headerHeight = parseInt(he.style.height),
   hcata = document.getElementById("hcata"),
   btnShow = document.getElementById("show"),
@@ -40,6 +41,10 @@ function clk() {
     // btnShow.className = "animate__flipInX";
     // layer.className = "cata animate__fadeOut";
     header.style.height = 55 + "px";
+    let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
+    if (headheadScroll < 160 && headlo) {
+      headlo.className = 'headhead headlo headbdf';
+    }
     isShow = false;
     // setTimeout(function () {
     //   isShow = false;
@@ -52,7 +57,10 @@ function clk() {
     // layer.className = "cata animate__fadeIn"
     // 计算展开后的header高度
     header.style.height = (windowHeight) + "px";
-    console.log(windowHeight);
+    let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
+    if (headheadScroll < 160 && headlo) {
+      headlo.className = 'headhead headlo headbdfOn';
+    }
     isShow = true;
     // setTimeout(function () {
     //   isShow = true;

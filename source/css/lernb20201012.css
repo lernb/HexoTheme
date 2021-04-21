@@ -704,7 +704,7 @@ strong {
 .banner-back {
   position: relative;
   /* width: 1200px; */
-  height: 290px;
+  height: 230px;
   /* margin-bottom: 20px; */
   /* margin-top: 80px; */
   /* border-radius: 10px; */
@@ -713,10 +713,10 @@ strong {
 .banner-back::before {
   content: ' ';
   position: fixed;
-  top: 55px;
+  top: 0;
   right: 0;
   left: 0;
-  height: 300px;
+  height: 280px;
   background: url('/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
@@ -756,10 +756,40 @@ strong {
     position: fixed;
     top: 0;
     width: 100%;
-    /* height: 63px; */
-    box-shadow: 0 1px 5px 0 rgba(17, 58, 93, .1);
-    /* border-bottom: 1px solid #f7f7f7; */
+    /* box-shadow: 0 1px 5px 0 rgba(17, 58, 93, .1); */
     z-index: 999;
+  }
+  .headhead::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 1px 5px 0 rgba(17, 58, 93, .1);
+    z-index: -1;
+    opacity: 1;
+    transition: opacity .4s;
+  }
+  .headbdf::before {
+    opacity: 0;
+  }
+  .headbdfOn::before {
+    opacity: 1;
+  }
+  .headbdf::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(190deg, rgb(0 0 0 / 55%) -15%, transparent 52%);
+    opacity: 1;
+    z-index: -1;
+    transition: opacity .4s;
   }
 }
 
@@ -770,7 +800,7 @@ strong {
     position: fixed;
     width: 100%;
     height: 55px;
-    box-shadow: 0 0 10px 0 rgba(17, 58, 93, .1);
+    /* box-shadow: 0 1px 5px 0 rgba(17, 58, 93, .1); */
     z-index: 999;
   }
 }
@@ -1069,7 +1099,7 @@ strong {
   }
   .headhead {
     margin-bottom: 30px;
-    transition: top .4s ease;
+    transition: all .4s;
   }
   .wrap-content {
     width: 100%;
@@ -1211,10 +1241,10 @@ strong {
 
 @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
   .header-wrap {
-    background-color: rgba(255, 255, 255, 0.65);
+    /* background-color: rgba(255, 255, 255, 0.65);
     -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(55px);
-    transition: height .4s ease;
+    backdrop-filter: blur(15px); */
+    transition: height .4s;
   }
 }
 
@@ -1223,8 +1253,8 @@ strong {
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .header-wrap {
     background-color: #fff;
-    transition: height .4s ease;
-  }
+    transition: height .4s;
+    }
 }
 
 .pgbar {

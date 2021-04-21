@@ -1,4 +1,9 @@
-<div class="headhead">
+<% if(!is_home() && !is_category()) { %>
+  <div class="headhead">
+<% } else { %>
+  <div class="headhead headlo headbdf">
+<% } %>
+<!-- <div class="headhead headbdf"> -->
   <div class="header-wrap" id="he" style="height: 55px;">
     <div class="blur-bg"></div>
     <% if (page.type == 'note'){ %>

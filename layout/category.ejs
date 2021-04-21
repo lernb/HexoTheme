@@ -1,4 +1,22 @@
 <!-- 分类详情页 -->
+<script>
+  let indexTimer,
+    indexHead = document.getElementsByClassName('headhead')[0];
+  window.addEventListener('scroll', function() {
+    if(!indexTimer) {
+      indexTimer = setTimeout(() => {
+        let indexScroll = document.body.scrollTop + document.documentElement.scrollTop;
+        if(indexScroll >= 160) {
+          indexHead.className = 'headhead headlo headbdfOn';
+        } else {
+          indexHead.className = 'headhead headlo headbdf';
+        }
+        indexTimer = null;
+        clearTimeout(indexTimer);
+      }, 100);
+    }
+  });
+</script>
 <div class="wrap-bd">
   <h1 class="deta-hd cate-hd" data-cate="<%- page.category %>">
     <%- page.category %>&nbsp;<span style="font-size: 22px; color: #ddd;">分类</span>
