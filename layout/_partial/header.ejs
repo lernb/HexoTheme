@@ -1,4 +1,9 @@
-<div class="headhead">
+<% if(!is_home() && !is_category()) { %>
+  <div class="headhead">
+<% } else { %>
+  <div class="headhead headlo headbdf">
+<% } %>
+<!-- <div class="headhead headbdf"> -->
   <div class="header-wrap" id="he" style="height: 55px;">
     <div class="blur-bg"></div>
     <% if (page.type == 'note'){ %>
@@ -51,11 +56,13 @@
     <div id="hcata">
       <!-- <img src="/asset/u2.jpg" alt="头像" style="display: block; width: 100px; height: 100px; border-radius: 50%; margin: 30px auto 30px;">
       <div class="barauthor" style="text-align: center; font-family: cmFont; font-size: 1.6rem; color: #18a0db;">lernb.</div> -->
-      <%- partial('_partial/author') %>
+
+      <!-- author -->
+
       <div class="headerMenu">
         <a href="/">首页</a>
         <a href="/tags">标签</a>
-        <a href="/note/note-intro.html">学习</a>
+        <a href="/note/note-intro.html">前端</a>
         <!-- <a href="/categories">分类</a> -->
       </div>
       <% if (theme.headerRecent){ %>

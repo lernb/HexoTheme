@@ -1,5 +1,6 @@
 // let layer = document.getElementById("layer");
 const header = document.getElementById("he"),
+  headlo = document.getElementsByClassName('headlo')[0],
   headerHeight = parseInt(he.style.height),
   hcata = document.getElementById("hcata"),
   btnShow = document.getElementById("show"),
@@ -40,6 +41,10 @@ function clk() {
     // btnShow.className = "animate__flipInX";
     // layer.className = "cata animate__fadeOut";
     header.style.height = 55 + "px";
+    let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
+    if (headheadScroll < 160 && headlo) {
+      headlo.className = 'headhead headlo headbdf';
+    }
     isShow = false;
     // setTimeout(function () {
     //   isShow = false;
@@ -52,7 +57,10 @@ function clk() {
     // layer.className = "cata animate__fadeIn"
     // 计算展开后的header高度
     header.style.height = (windowHeight) + "px";
-    console.log(windowHeight);
+    let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
+    if (headheadScroll < 160 && headlo) {
+      headlo.className = 'headhead headlo headbdfOn';
+    }
     isShow = true;
     // setTimeout(function () {
     //   isShow = true;
@@ -66,31 +74,18 @@ for (let i = 0; i < iList.length; i++) {
   (function (n) {
     iList[n].addEventListener('touchstart', function (e) {
       e.stopPropagation();
-      // iList[n].setAttribute('style', 'transform: scale3d(.97, .97, .97)');
       iList[n].style.transform = 'scale3d(.97, .97, .97)';
     });
     iList[n].addEventListener('touchend', function (e) {
-      // setTimeout(function () {
-      //   iList[i].setAttribute('style', 'transform: initial');
-      // }, 200);
-      // iList[n].setAttribute('style', 'transform: initial');
       iList[n].style.transform = 'initial';
     });
     iList[n].addEventListener('touchmove', function (e) {
       setTimeout(function () {
-        // iList[n].setAttribute('style', 'transform: initial');
         iList[n].style.transform = 'initial';
       }, 200);
     });
   })(i);
 }
-// wrapbd.addEventListener('touchstart', function (e) {
-//   for (let i = 0; i < iList.length; i++) {
-//     setTimeout(function () {
-//       iList[i].setAttribute('style', 'transform: initial');
-//     }, 200);
-//   }
-// });
 
 
 if (pcate.length) {

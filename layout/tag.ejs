@@ -12,6 +12,17 @@
   <div class="p-list">
     <ul>
       <li class="p-list-item clearfix">
+        <div class="ph-cate">
+          <%- list_tags(post.categories, { show_count: false }) %>
+        </div>
+        <!-- S 文章标题 -->
+        <div class="d-pp-h" style="margin-bottom: 8px;">
+          <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
+              title="<%- post.title %>">
+              <%= post.title %>
+            </a></h1>
+        </div>
+        <!-- E 文章标题 -->
         <!-- S 文章图片 -->
         <div class="post-img">
           <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
@@ -23,17 +34,6 @@
         <div class="p-list-item-right img-pc">
           <!-- S 标题内容 -->
           <div class="content">
-            <div class="ph-cate">
-              <%- list_tags(post.categories, { show_count: false }) %>
-            </div>
-            <!-- S 文章标题 -->
-            <div class="d-pp-h">
-              <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
-                  title="<%- post.title %>">
-                  <%= post.title %>
-                </a></h1>
-            </div>
-            <!-- E 文章标题 -->
             <div class="zy">
               <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
                   href="<%- url_for(post.path) %>"></a>

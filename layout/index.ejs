@@ -1,3 +1,21 @@
+<script>
+  let indexTimer,
+    indexHead = document.getElementsByClassName('headhead')[0];
+  window.addEventListener('scroll', function() {
+    if(!indexTimer) {
+      indexTimer = setTimeout(() => {
+        let indexScroll = document.body.scrollTop + document.documentElement.scrollTop;
+        if(indexScroll >= 160) {
+          indexHead.className = 'headhead headlo headbdfOn';
+        } else {
+          indexHead.className = 'headhead headlo headbdf';
+        }
+        indexTimer = null;
+        clearTimeout(indexTimer);
+      }, 100);
+    }
+  });
+</script>
 <% if(theme.notice) { %>
   <div class="notice">
     <div class="nContent">
@@ -9,9 +27,9 @@
   <% } %>
     <div class="wrap-bd clearfix">
       <%- partial('_partial/category-heading') %>
-      <h1 class="deta-hd plist-deta-hd">
+      <!-- <h1 class="deta-hd">
         最近
-      </h1>
+      </h1> -->
       <!-- <div class="rec">
         最近更新
       </div> -->
@@ -21,6 +39,17 @@
             <% if(!post.plist) { %>
               <!-- <div class="p-list"> -->
               <li class="p-list-item clearfix">
+                <div class="ph-cate">
+                  <%- list_tags(post.categories, { show_count: false }) %>
+                </div>
+                <!-- S 文章标题 -->
+                <div class="d-pp-h" style="margin-bottom: 8px;">
+                  <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
+                      title="<%- post.title %>">
+                      <%= post.title %>
+                    </a></h1>
+                </div>
+                <!-- E 文章标题 -->
                 <!-- S 文章图片 -->
                 <div class="post-img">
                   <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
@@ -32,17 +61,6 @@
                 <div class="p-list-item-right img-pc">
                   <!-- S 标题内容 -->
                   <div class="content">
-                    <div class="ph-cate">
-                      <%- list_tags(post.categories, { show_count: false }) %>
-                    </div>
-                    <!-- S 文章标题 -->
-                    <div class="d-pp-h">
-                      <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
-                          title="<%- post.title %>">
-                          <%= post.title %>
-                        </a></h1>
-                    </div>
-                    <!-- E 文章标题 -->
                     <div class="zy">
                       <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
                           href="<%- url_for(post.path) %>"></a>
