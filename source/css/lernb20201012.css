@@ -717,7 +717,7 @@ strong {
   right: 0;
   left: 0;
   height: 280px;
-  background: #25566b url('/asset/typ.jpg') center 50% no-repeat;
+  background: #25566b url('https://blog.lernb.com/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
 
@@ -1346,7 +1346,7 @@ strong {
   display: block;
   width: 140px;
   height: 33px;
-  background: url('/asset/lernb.png');
+  background: url('https://blog.lernb.com/asset/lernb.png');
   background-size: contain;
   font-size: 0;
   transition: box-shadow 0.3s ease;
@@ -1505,15 +1505,15 @@ strong {
     height: 30px;
   }
   .headhead .head button #show {
-    background: url("/asset/menu.svg") no-repeat 0 5px;
+    background: url("https://blog.lernb.com/asset/menu.svg") no-repeat 0 5px;
     background-size: 32px;
   }
   .headhead #show i {
-    background: url("/asset/close.svg");
+    background: url("https://blog.lernb.com/asset/close.svg");
   }
   .headhead .head button #close {
     display: none;
-    background: url("/asset/close.svg") no-repeat 0 5px;
+    background: url("https://blog.lernb.com/asset/close.svg") no-repeat 0 5px;
     background-size: 25px;
   }
   .heade .cata {
