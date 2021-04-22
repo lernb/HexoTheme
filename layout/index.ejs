@@ -5,10 +5,10 @@
     if(!indexTimer) {
       indexTimer = setTimeout(() => {
         let indexScroll = document.body.scrollTop + document.documentElement.scrollTop;
-        if(indexScroll >= 160) {
-          indexHead.className = 'headhead headlo headbdfOn';
+        if(indexScroll >= 170) {
+          indexHead.className = 'headhead headlo headbdfOn headbdfAfter headbdfAfterOff';
         } else {
-          indexHead.className = 'headhead headlo headbdf';
+          indexHead.className = 'headhead headlo headbdf headbdfAfter';
         }
         indexTimer = null;
         clearTimeout(indexTimer);

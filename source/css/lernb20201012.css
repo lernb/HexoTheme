@@ -779,7 +779,7 @@ strong {
   .headbdfOn::before {
     opacity: 1;
   }
-  .headbdf::after {
+  .headbdfAfter::after {
     content: " ";
     display: block;
     position: absolute;
@@ -789,7 +789,10 @@ strong {
     background: linear-gradient(180deg, rgb(0 0 0 / 50%) -15%, transparent 100%);
     opacity: 1;
     z-index: -1;
-    transition: opacity .5s;
+    transition: opacity .4s;
+  }
+  .headbdfAfterOff::after {
+    opacity: 0;
   }
 }
 
@@ -821,7 +824,7 @@ strong {
   .headbdfOn::before {
     opacity: 1;
   }
-  .headbdf::after {
+  .headbdfAfter::after {
     content: " ";
     display: block;
     position: absolute;
@@ -831,7 +834,10 @@ strong {
     background: linear-gradient(180deg, rgb(0 0 0 / 50%) -15%, transparent 100%);
     opacity: 1;
     z-index: -1;
-    transition: opacity .5s;
+    transition: opacity .4s;
+  }
+  .headbdfAfterOff::after {
+    opacity: 0;
   }
 }
 

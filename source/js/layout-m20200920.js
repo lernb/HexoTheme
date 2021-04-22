@@ -42,8 +42,8 @@ function clk() {
     // layer.className = "cata animate__fadeOut";
     header.style.height = 55 + "px";
     let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
-    if (headheadScroll < 160 && headlo) {
-      headlo.className = 'headhead headlo headbdf';
+    if (headheadScroll < 170 && headlo) {
+      headlo.className = 'headhead headlo headbdf headbdfAfter';
     }
     isShow = false;
     // setTimeout(function () {
@@ -58,8 +58,8 @@ function clk() {
     // 计算展开后的header高度
     header.style.height = (windowHeight) + "px";
     let headheadScroll = document.body.scrollTop + document.documentElement.scrollTop;
-    if (headheadScroll < 160 && headlo) {
-      headlo.className = 'headhead headlo headbdfOn';
+    if (headheadScroll < 170 && headlo) {
+      headlo.className = 'headhead headlo headbdfOn headbdfAfter headbdfAfterOff';
     }
     isShow = true;
     // setTimeout(function () {
