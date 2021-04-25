@@ -717,7 +717,7 @@ strong {
   right: 0;
   left: 0;
   height: 280px;
-  background: #25566b url('https://blog.lernb.com/asset/typ.jpg') center 50% no-repeat;
+  background: #25566b url('https://gitee.com/lernb/pic-host/raw/master/img/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
 
@@ -785,11 +785,11 @@ strong {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgb(0 0 0 / 50%) -15%, transparent 100%);
+    height: 55px;
+    background: linear-gradient(180deg, rgb(0 0 0 / 65%) -35%, transparent 100%);
     opacity: 1;
     z-index: -1;
-    transition: opacity .4s;
+    transition: opacity .3s;
   }
   .headbdfAfterOff::after {
     opacity: 0;
@@ -831,10 +831,10 @@ strong {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgb(0 0 0 / 50%) -15%, transparent 100%);
+    background: linear-gradient(180deg, rgb(0 0 0 / 90%) -35%, transparent 100%);
     opacity: 1;
     z-index: -1;
-    transition: opacity .4s;
+    transition: opacity .3s;
   }
   .headbdfAfterOff::after {
     opacity: 0;
@@ -1346,7 +1346,7 @@ strong {
   display: block;
   width: 140px;
   height: 33px;
-  background: url('https://blog.lernb.com/asset/lernb.png');
+  background: url('https://gitee.com/lernb/pic-host/raw/master/img/lernb.png');
   background-size: contain;
   font-size: 0;
   transition: box-shadow 0.3s ease;
@@ -2398,12 +2398,12 @@ html {
 
 .wrap-content .note-wrap {
   float: right;
-  width: 750px;
+  width: 700px;
   margin-right: 45px;
 }
 
 .wrap-content .note-post {
-  width: 750px;
+  width: 700px;
 }
 
 .wrap-content .note-bar {
@@ -2664,6 +2664,10 @@ html {
   line-height: 1.3;
 }
 
+.post-wrap.note-wrap .post h1 {
+  color: #2c3e50;
+}
+
 .post-wrap .deta-hd.tag-hd {
   padding-left: 25px;
   background-image: url('/asset/tag2.png');
@@ -2714,6 +2718,9 @@ html {
   color: #222;
   font-size: 16px;
   /* overflow: hidden; */
+}
+.post-wrap.note-wrap .post-text {
+  color: #2c3e50;
 }
 
 .post-wrap .post-text ul {
