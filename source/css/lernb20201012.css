@@ -717,7 +717,7 @@ strong {
   right: 0;
   left: 0;
   height: 280px;
-  background: #25566b url('https://gitee.com/lernb/pic-host/raw/master/img/typ.jpg') center 50% no-repeat;
+  background: #25566b url('/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
 
