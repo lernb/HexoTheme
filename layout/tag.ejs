@@ -1,7 +1,7 @@
 <!-- 标签具体详情页 -->
 <div class="wrap-bd">
   <h1 class="deta-hd tag-hd"><%- page.tag %>&nbsp;<span style="font-size: 22px; color: #ddd;">标签</span></h1>
-
+  <ul class="p-list">
   <% page.posts.each(function(post, i){ %>
   <% var year = post.date.year(); %>
   <!-- <section class="archives-wrap">
@@ -9,8 +9,7 @@
           <%= date(post.date, "YYYY-MM-DD") %><a href="<%- url_for(post.path) %>" class="archive-year"><%= post.title %></a>
         </div>
       </section> -->
-  <div class="p-list">
-    <ul>
+  <!-- <div class="p-list"> -->
       <li class="p-list-item clearfix">
         <div class="ph-cate">
           <%- list_tags(post.categories, { show_count: false }) %>
@@ -53,9 +52,8 @@
           <!-- E 文章信息 -->
         </div>
       </li>
+      <% }) %>
     </ul>
-  </div>
-  <% }) %>
   <!-- 底部分页 -->
   <% if (page.total > 1){ %>
   <div id="pageNav" style="clear: both;">

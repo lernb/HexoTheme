@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /* S index */
 
-@font-face {
+/* @font-face {
   font-family: cmFont;
   src: url('/asset/cm.ttf');
-}
+} */
 
 .wrap-bd {
   width: 700px;
@@ -1290,7 +1290,7 @@ strong {
   .header-wrap {
     /* background-color: #fff; */
     transition: height .4s;
-    }
+  }
 }
 
 .pgbar {
@@ -1346,7 +1346,7 @@ strong {
   display: block;
   width: 140px;
   height: 33px;
-  background: url('https://gitee.com/lernb/pic-host/raw/master/img/lernb.png');
+  background: url('/asset/lernb.png');
   background-size: contain;
   font-size: 0;
   transition: box-shadow 0.3s ease;
@@ -2719,6 +2719,7 @@ html {
   font-size: 16px;
   /* overflow: hidden; */
 }
+
 .post-wrap.note-wrap .post-text {
   color: #2c3e50;
 }

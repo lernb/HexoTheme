@@ -46,7 +46,7 @@
           }) %>
     </div>
     <% } %>
-    <%- js('js/prism') %>
+    <script src="https://lernb.gitee.io/js/prism.js"></script>
   </div>
   <!-- 文章底部导航 -->
   <% if (page.prev || page.next){ %>
@@ -80,7 +80,7 @@
   <% if (theme.showComment && page.comment){ %>
   <hr class="comm-hr">
   <h3 class="comm-hd">评论</h3>
-  <script src="/js/valines.js"></script>
+  <script src="https://lernb.gitee.io/js/valines.js"></script>
   <div id="vcomments"></div>
   <script>
     new Valine({
@@ -106,9 +106,9 @@
 <script type="text/javascript">
   let postJs = document.getElementById('post-js');
   if (screen.width < 1236) {
-    postJs.setAttribute('src', '/js/post-m20200923.js');
+    postJs.setAttribute('src', 'https://lernb.gitee.io/js/post-m20200923.js');
   } else {
-    postJs.setAttribute('src', '/js/post20200917.js');
+    postJs.setAttribute('src', 'https://lernb.gitee.io/js/post20200917.js');
   }
 </script>
 <% if (theme.showComment && page.comment){ %>
