@@ -83,8 +83,8 @@ if (headings.length && menuTitle) {
     postScroll = document.body.scrollTop + document.documentElement.scrollTop,
     offsetTop = ptmf.offsetTop - postScroll,
     flag = true;
-  if (offsetTop <= 78) {
-    ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 78px; width: 320px;');
+  if (offsetTop <= 68) {
+    ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 68px; width: 320px; margin-bottom: 0;');
     toTop.style.right = '15px';
   }
   window.addEventListener('scroll', function () {
@@ -94,7 +94,7 @@ if (headings.length && menuTitle) {
     }
     if (flag) {
       if (postScroll >= scrolled) {
-        ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 78px; width: 320px;');
+        ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 68px; width: 320px; margin-bottom: 0;');
         toTop.style.right = '15px';
         flag = false;
       } else {

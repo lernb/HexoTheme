@@ -199,7 +199,7 @@
 .p-list .zy {
   margin-top: 3px;
   font-size: 15px;
-  color: #121212;
+  color: #555;
   word-break: break-all;
   line-height: 1.6;
   overflow: hidden;
@@ -688,7 +688,7 @@ strong {
   margin: 0 auto;
   width: 100%;
   background-color: #fff;
-  padding: 0 0 30px 0;
+  /* padding: 0 0 30px 0; */
   z-index: 99;
 }
 
@@ -717,7 +717,7 @@ strong {
   right: 0;
   left: 0;
   height: 280px;
-  background: #25566b url('https://lernb.gitee.io/asset/typ.jpg') center 50% no-repeat;
+  background: #25566b url('https://blog.lernb.com/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
 }
 
@@ -1346,7 +1346,7 @@ strong {
   display: block;
   width: 140px;
   height: 33px;
-  background: url('/asset/lernb.png');
+  background: url('https://blog.lernb.com/asset/lernb.png');
   background-size: contain;
   font-size: 0;
   transition: box-shadow 0.3s ease;
@@ -2251,7 +2251,7 @@ html {
 } */
 
 .bar .post-title-menu-flag {
-  max-height: 80%;
+  max-height: 85%;
   /* padding: 0 20px 0; */
   overflow-x: hidden;
 }
@@ -2267,13 +2267,13 @@ html {
 
 .bar .post-title-menu-flag::-webkit-scrollbar {
   background-color: #eeeeee;
-  width: 6px;
+  width: 4px;
   height: 0px;
   background-clip: padding-box;
 }
 
 .bar .post-title-menu-flag::-webkit-scrollbar-thumb {
-  background-color: #cecece;
+  background-color: #ddd;
   border-radius: 6px;
 }
 
@@ -2660,7 +2660,7 @@ html {
 .post-wrap .post h1 {
   color: #222;
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.3;
 }
 
@@ -2714,8 +2714,8 @@ html {
 }
 
 .post-wrap .post-text {
-  line-height: 1.8;
-  color: #222;
+  line-height: 1.9;
+  color: #424242;
   font-size: 16px;
   /* overflow: hidden; */
 }
@@ -2870,11 +2870,11 @@ html {
 
 .post-wrap .post-text h4 {
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 27px;
   margin: 5px 0 20px;
-  background: linear-gradient(to top, #b1e7ff 27%, transparent 27% 100%);
+  /* background: linear-gradient(to top, #b1e7ff 27%, transparent 27% 100%); */
 }
 
 .post-wrap .post-text h3::before {
@@ -3428,7 +3428,6 @@ code {
   }
   .post-wrap .post-text {
     font-size: 1.6rem;
-    /* color: #222; */
   }
   .post-wrap .post-text table {
     width: 750px;
@@ -3478,6 +3477,7 @@ code {
     margin: 0 auto;
     font-size: 28px;
     color: #222;
+    font-weight: bold;
     /* margin-left: -6px; */
   }
   .post .m-tit .ph-cate {

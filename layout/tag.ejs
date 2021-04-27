@@ -15,7 +15,7 @@
           <%- list_tags(post.categories, { show_count: false }) %>
         </div>
         <!-- S 文章标题 -->
-        <div class="d-pp-h" style="margin-bottom: 8px;">
+        <div class="d-pp-h" style="margin-bottom: 12px;">
           <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
               title="<%- post.title %>">
               <%= post.title %>
@@ -77,7 +77,7 @@
               <div class="post-img">
                 <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
                   <div class="overlay"></div>
-                  <img src="<%- post.img %>" alt="文图">
+                  <img src="<%- post.img %>" alt="文章封面">
                 </a>
               </div>
               <% } else if(post.iframe) { %>

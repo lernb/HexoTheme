@@ -31,7 +31,7 @@
                   <h1 class="" style="line-height: 1.3;">
                     <% if(is_current(post.path)) { %>
                       <a class="hoverLine" href="<%- url_for(post.path) %>" title="<%- post.title %>"
-                        style="color: #18a0db; font-size: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                        style="width: 100%; color: #18a0db; font-size: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                         <%= post.title %>
                       </a>
                       <% } else { %>
