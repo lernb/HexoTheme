@@ -18,8 +18,9 @@ notice:
 title: LERNB | 网络日志
 description: LERNB - 学习、记录、分享 - LERNB
 keywords: LERNB,技术,分享,博客,IT新闻,互联网,Internet,数码,科技,网络,科普,通信,智能手机,blog
-favicon: https://gitee.com/lernb/pic-host/raw/master/img/favicon.png
+favicon: https://blog.lernb.com/asset/favicon.png
 userhead: https://blog.lernb.com/asset/u2.jpg
+bannerBg: https://blog.lernb.com/asset/typ.jpg
 
 # 侧栏插件
 showRecent: true

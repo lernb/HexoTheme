@@ -710,7 +710,7 @@ strong {
   /* border-radius: 10px; */
 }
 
-.banner-back::before {
+/* .banner-back::before {
   content: ' ';
   position: fixed;
   top: 0;
@@ -719,7 +719,7 @@ strong {
   height: 280px;
   background: #25566b url('https://blog.lernb.com/asset/typ.jpg') center 50% no-repeat;
   background-size: cover;
-}
+} */
 
 .banner-back .banner-content {
   position: absolute;

@@ -22,8 +22,9 @@
     <div class="wrap clearfix">
       <% if (!is_post() && !is_tag() && page.type != 'tags' && page.type != 'note') { %>
         <div class="banner-back" style="position: relative;">
+          <div class="bannerBg" style="position: fixed; top: 0; left: 0; right: 0; height: 280px; background: #25566b url('<%- theme.bannerBg %>') center 50% no-repeat; background-size: cover;"></div>
           <div class="banner-content">
-            <img class="au-head" src="<%- theme.userhead %>" alt="">
+            <img class="au-head" src="<%- theme.userhead %>" alt="头像" title="这是头像！">
           </div>
         </div>
       <% } %>
