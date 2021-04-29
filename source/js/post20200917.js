@@ -94,7 +94,7 @@ if (headings.length && menuTitle) {
     }
     if (flag) {
       if (postScroll >= scrolled) {
-        ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 68px; width: 320px; margin-bottom: 0;');
+        ptmf.setAttribute('style', 'position: fixed; box-sizing: border-box; top: 68px; width: 300px; margin-bottom: 0;');
         toTop.style.right = '15px';
         flag = false;
       } else {

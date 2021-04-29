@@ -23,9 +23,9 @@
           <div class="uname"><span>ler</span></div>
           <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
             <% if(page.res && page.res != '原创') { %>
-            <a id="reslink" href="<%- page.resLink %>" target="_blank" title="来源：<%- page.res %>">
+            <a id="reslink" href="<%- page.resLink %>" target="_blank" title="本文转编自：<%- page.res %>">
 
-              <span class="res">源</span><span class="res-link"><%- page.res %></span>
+              <span class="res">转</span><span class="res-link"><%- page.res %></span>
             </a>
             <% } else if(page.res == '原创') { %>
             <span
@@ -108,7 +108,7 @@
   if (screen.width < 1236) {
     postJs.setAttribute('src', 'https://blog.lernb.com/js/post-m20200923.js');
   } else {
-    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=0427');
+    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=0429');
   }
 </script>
 <% if (theme.showComment && page.comment){ %>

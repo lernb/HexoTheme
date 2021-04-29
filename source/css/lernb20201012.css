@@ -1887,7 +1887,7 @@ html {
 }
 
 .bar .d-pp-h a {
-  color: #222;
+  color: #212529;
 }
 
 .bar .d-pp-h a::before {
@@ -2251,13 +2251,15 @@ html {
 } */
 
 .bar .post-title-menu-flag {
-  max-height: 85%;
-  /* padding: 0 20px 0; */
-  overflow-x: hidden;
+  /* max-height: 650px; */
+  padding: 15px;
+  background: #fafafa;
+  /* overflow-x: hidden; */
 }
 
 .bar .post-title-content {
-  max-height: 94%;
+  max-height: 650px;
+  padding-right: 5px;
   overflow: auto;
 }
 
@@ -2265,16 +2267,16 @@ html {
   width: 0;
 }
 
-.bar .post-title-menu-flag::-webkit-scrollbar {
+.bar .post-title-content::-webkit-scrollbar {
   background-color: #eeeeee;
-  width: 4px;
+  width: 3px;
   height: 0px;
   background-clip: padding-box;
 }
 
-.bar .post-title-menu-flag::-webkit-scrollbar-thumb {
+.bar .post-title-content::-webkit-scrollbar-thumb {
   background-color: #ddd;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .bar .post-title-menu {
@@ -2715,7 +2717,7 @@ html {
 
 .post-wrap .post-text {
   line-height: 1.9;
-  color: #424242;
+  color: #212529;
   font-size: 16px;
   /* overflow: hidden; */
 }
@@ -2772,11 +2774,22 @@ html {
 .post-text blockquote {
   position: relative;
   margin-bottom: 25px;
-  padding: 15px 25px;
-  background-color: #fafafa;
+  padding: 20px;
+  /* background-color: #fafafa; */
+  border: 1px solid #e9ecef;
   border-left: 4px solid #888;
-  color: #aaa;
+  color: #666;
   border-radius: 4px;
+}
+
+.post-text blockquote.w {
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #f0ad4e;
+}
+
+.post-text blockquote.i {
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #5bc0de;
 }
 
 .wrap .post-wrap .post-text blockquote> :last-child, .wrap .post-wrap .post-text blockquote> :last-child> :last-child, .wrap .post-wrap .post-text blockquote> :last-child> :last-child>:last-child {
