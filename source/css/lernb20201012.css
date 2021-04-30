@@ -7,7 +7,7 @@
 } */
 
 .wrap-bd {
-  width: 700px;
+  width: 750px;
 }
 
 .wrap-bd .rec {
@@ -885,8 +885,12 @@ strong {
   visibility: hidden; */
 }
 
+.wrap-content, .head {
+  width: 1100px;
+}
+
 .wrap-content {
-  width: 1050px;
+  /* width: 1050px; */
   margin: 0 auto;
   padding-top: 20px;
 }
@@ -1322,7 +1326,7 @@ strong {
 }
 
 .head {
-  width: 1050px;
+  /* width: 1050px; */
   /* padding: 0 16px; */
   margin: 0 auto;
   height: 55px;
@@ -2400,7 +2404,7 @@ html {
 
 .wrap-content .note-wrap {
   float: right;
-  width: 700px;
+  width: 750px;
   margin-right: 45px;
 }
 
@@ -2416,7 +2420,7 @@ html {
   width: calc(((100% - 1200px) / 2) + 285px);
   height: 100%;
   background-color: #F5F7F9;
-  padding-left: calc((100% - 1070px) / 2);
+  padding-left: calc((100% - 1100px) / 2);
   padding-top: 30px;
   border-right: 1px solid #E6ECF1;
   overflow: auto;
@@ -2434,7 +2438,7 @@ html {
 /* S post */
 
 .post-wrap {
-  width: 700px;
+  width: 750px;
   float: left;
 }
 
@@ -2718,7 +2722,7 @@ html {
 .post-wrap .post-text {
   line-height: 1.9;
   color: #212529;
-  font-size: 16px;
+  font-size: 18px;
   /* overflow: hidden; */
 }
 
@@ -2774,7 +2778,7 @@ html {
 .post-text blockquote {
   position: relative;
   margin-bottom: 25px;
-  padding: 20px;
+  padding: 10px 20px;
   /* background-color: #fafafa; */
   border: 1px solid #e9ecef;
   border-left: 4px solid #888;
@@ -2792,7 +2796,44 @@ html {
   border-left: 4px solid #5bc0de;
 }
 
+.success {
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  color: #25a35a;
+  border-left: 4px solid #2ecc71;
+  background-color: rgba(46, 204, 113, 0.3);
+}
+
+.warning {
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  color: #c29d0b;
+  border-left: 4px solid #f1c40f;
+  background-color: rgba(241, 196, 15, 0.3);
+}
+
+.tip {
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  color: #217bb8;
+  /* border: 1px solid rgba(52, 152, 219, 0.3); */
+  border-left: 4px solid #3498db;
+  background-color: rgba(52, 152, 219, 0.3);
+}
+
 .wrap .post-wrap .post-text blockquote> :last-child, .wrap .post-wrap .post-text blockquote> :last-child> :last-child, .wrap .post-wrap .post-text blockquote> :last-child> :last-child>:last-child {
+  margin-bottom: 0;
+}
+
+.wrap .post-wrap .post-text .success> :last-child, .wrap .post-wrap .post-text .success> :last-child> :last-child, .wrap .post-wrap .post-text .success> :last-child> :last-child>:last-child {
+  margin-bottom: 0;
+}
+
+.wrap .post-wrap .post-text .tip> :last-child, .wrap .post-wrap .post-text .tip> :last-child> :last-child, .wrap .post-wrap .post-text .tip> :last-child> :last-child>:last-child {
+  margin-bottom: 0;
+}
+
+.wrap .post-wrap .post-text .warning> :last-child, .wrap .post-wrap .post-text .warning> :last-child> :last-child, .wrap .post-wrap .post-text .warning> :last-child> :last-child>:last-child {
   margin-bottom: 0;
 }
 
@@ -2841,7 +2882,7 @@ html {
   position: relative;
   /* display: inline-block; */
   margin: 35px 0 20px;
-  font-size: 25px;
+  font-size: 28px;
   line-height: 1.6;
 }
 
@@ -2869,7 +2910,7 @@ html {
 
 .post-wrap .post-text h3 {
   /* display: block; */
-  font-size: 20px;
+  font-size: 25px;
   line-height: 27px;
   margin: 30px 0 20px;
   /* background: linear-gradient(to top, #b1e7ff 27%, transparent 27% 100%); */
@@ -2883,7 +2924,7 @@ html {
 
 .post-wrap .post-text h4 {
   display: inline-block;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bold;
   line-height: 27px;
   margin: 5px 0 20px;
@@ -3548,6 +3589,36 @@ code {
     margin-left: calc((100% / 0.9) * -0.05);
   }
   .post-text blockquote {
+    box-sizing: border-box;
+    width: calc(100% / 0.9);
+    padding-left: calc(5.6% - 6px);
+    padding-right: 5.6%;
+    margin-left: calc((100% / 0.9) * -0.05);
+    border-left-width: 6px;
+    word-break: break-all;
+    border-radius: 0;
+  }
+  .post-text .success {
+    box-sizing: border-box;
+    width: calc(100% / 0.9);
+    padding-left: calc(5.6% - 6px);
+    padding-right: 5.6%;
+    margin-left: calc((100% / 0.9) * -0.05);
+    border-left-width: 6px;
+    word-break: break-all;
+    border-radius: 0;
+  }
+  .post-text .warning {
+    box-sizing: border-box;
+    width: calc(100% / 0.9);
+    padding-left: calc(5.6% - 6px);
+    padding-right: 5.6%;
+    margin-left: calc((100% / 0.9) * -0.05);
+    border-left-width: 6px;
+    word-break: break-all;
+    border-radius: 0;
+  }
+  .post-text .tip {
     box-sizing: border-box;
     width: calc(100% / 0.9);
     padding-left: calc(5.6% - 6px);
