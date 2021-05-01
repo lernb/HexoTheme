@@ -10,7 +10,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 code[class*="language-"], pre[class*="language-"] {
   color: #ccc;
   background: none;
-  font-family: cmFont;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
   font-size: 14px;
   text-align: left;
   white-space: pre;

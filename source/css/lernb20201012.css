@@ -673,7 +673,7 @@
 /* S common */
 
 body {
-  font-family: "Microsoft YaHei", "PingFang SC", "Open Sans", Arial, "Hiragino Sans GB", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
   margin: 0;
   padding: 0;
 }
@@ -966,7 +966,8 @@ strong {
 .p-info-title .u-title .uname {
   font-size: 16px;
   color: #8b93a9;
-  font-family: cmFont;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-weight: bold;
 }
 
 .p-info-title .u-title .post-date {
@@ -2257,12 +2258,12 @@ html {
 .bar .post-title-menu-flag {
   /* max-height: 650px; */
   padding: 15px;
-  background: #fafafa;
+  background: #f6f8fa;
   /* overflow-x: hidden; */
 }
 
 .bar .post-title-content {
-  max-height: 650px;
+  max-height: 600px;
   padding-right: 5px;
   overflow: auto;
 }
@@ -2314,6 +2315,10 @@ html {
   -moz-user-select: none;
 }
 
+.bar .post-title-menu .m-hTitle.h2Title {
+  font-weight: bold;
+}
+
 .bar .post-title-menu a:hover {
   background-color: #ebedef;
 }
@@ -2334,9 +2339,9 @@ html {
   transform: initial;
 }
 
-.bar .post-title-menu>li>a {
+/* .bar .post-title-menu>li>a {
   font-weight: bold;
-}
+} */
 
 .bar .post-title-menu .aHover {
   background-color: #ebedef;
@@ -2722,7 +2727,7 @@ html {
 .post-wrap .post-text {
   line-height: 1.9;
   color: #212529;
-  font-size: 18px;
+  font-size: 17px;
   /* overflow: hidden; */
 }
 
@@ -2957,7 +2962,7 @@ code {
   border-radius: 6px;
   white-space: nowrap;
   font-size: 15px;
-  font-family: cmFont !important;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
 }
 
 .post-text pre {
