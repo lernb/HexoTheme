@@ -1,21 +1,3 @@
-<script>
-  let indexTimer,
-    indexHead = document.getElementsByClassName('headhead')[0];
-  window.addEventListener('scroll', function() {
-    if(!indexTimer) {
-      indexTimer = setTimeout(() => {
-        let indexScroll = document.body.scrollTop + document.documentElement.scrollTop;
-        if(indexScroll >= 170) {
-          indexHead.className = 'headhead headlo headbdfOn headbdfAfter headbdfAfterOff';
-        } else {
-          indexHead.className = 'headhead headlo headbdf headbdfAfter';
-        }
-        indexTimer = null;
-        clearTimeout(indexTimer);
-      }, 100);
-    }
-  });
-</script>
 <% if(theme.notice) { %>
   <div class="notice">
     <div class="nContent">
