@@ -23,6 +23,7 @@ userhead: https://blog.lernb.com/asset/u2.jpg
 bannerBg: https://blog.lernb.com/asset/typ.jpg
 
 # 侧栏插件
+showAuthor: false
 showRecent: true
 showTag: true
 showArchive: false

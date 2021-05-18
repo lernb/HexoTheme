@@ -1,5 +1,5 @@
 <% if(is_home() || is_category() || page.type == 'resume') { %>
-  <div class="headhead headlo headbdf headbdfAfter">
+  <div class="headhead headlo headbdf headbdfAfter tshadow">
   <script>
     let indexTimer,
       indexHead = document.getElementsByClassName('headhead')[0];
@@ -10,7 +10,7 @@
           if(indexScroll >= 170) {
             indexHead.className = 'headhead headlo headbdfOn headbdfAfter headbdfAfterOff';
           } else {
-            indexHead.className = 'headhead headlo headbdf headbdfAfter';
+            indexHead.className = 'headhead headlo headbdf headbdfAfter tshadow';
           }
           indexTimer = null;
           clearTimeout(indexTimer);

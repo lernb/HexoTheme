@@ -38,7 +38,7 @@
       <div class="bar barbar">
         <!-- <div class="barside"> -->
         <!-- S 侧栏插件 -->
-        <% if (is_home() && false){ %>
+        <% if (is_home() && theme.showAuthor){ %>
         <%- partial('_partial/author') %>
         <% } %>
 
@@ -62,15 +62,15 @@
         <% } %>
             
         <!-- 标签 -->
-        <% if (!is_tag() && page.type != 'tags'){ %>
+        <% if (page.type != 'tags' && theme.showTag){ %>
           <%- partial('_partial/tag') %>
         <% } %>
 
         <!-- 文章目录 -->
         <% if (is_post() && theme.showPostMenu){ %>
           <%- partial('_partial/menu') %>
-          <% } %>
-          <!-- E 侧栏插件 -->
+        <% } %>
+        <!-- E 侧栏插件 -->
         </div>
         <% } %>
         <!-- <%- theme.notice %> -->

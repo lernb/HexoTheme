@@ -66,10 +66,10 @@ if (headings.length && menuTitle) {
         if (headingsOffsetTop2 <= 285) {
           _(`h-${i}`)[0].style = '';
         } else {
-          _(`h-${i}`)[0].style = 'color: #18a0db; background-color: rgb(235, 237, 239)';
+          _(`h-${i}`)[0].style = 'color: #fffffe; background-color: #18a0db';
         }
       } else if (headingsOffsetTop <= 285 && i == headings.length - 1) {
-        _(`h-${i}`)[0].style = 'color: #18a0db; background-color: rgb(235, 237, 239)';
+        _(`h-${i}`)[0].style = 'color: #fffffe; background-color: #18a0db';
       } else {
         _(`h-${i}`)[0].style = '';
       }
