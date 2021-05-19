@@ -1,19 +1,10 @@
 <div class="post-wrap">
-  <div class="post">
-    <!-- <div class="post-h-banner" data-img="<%- page.img %>"> -->
-      <!-- <div class="overlaylay"></div> -->
-      <div class="m-tit">
-        <div class="m-tit-con">
-          <div class="ph-cate">
-            <%- list_tags(page.categories, {
-              show_count: false
-            }) %>
-          </div>
-          <h1><%- page.title %></h1>
-        </div>
-      </div>
-    <!-- </div> -->
-    <div class="post-con">
+  <article class="post">
+    <%- list_tags(page.categories, {
+      show_count: false
+    }) %>
+    <h1><%- page.title %></h1>
+    <div class="entry">
       <!-- S 文章信息 -->
       <div class="p-info-title">
         <div class="u-img">
@@ -35,7 +26,7 @@
         </div>
       </div>
       <!-- E 文章信息 -->
-      <div class="post-text">
+      <div class="entry-content">
         <%- page.content %>
       </div>
     </div>
@@ -47,7 +38,7 @@
     </div>
     <% } %>
     <script src="https://blog.lernb.com/js/prism.js"></script>
-  </div>
+  </article>
   <!-- 文章底部导航 -->
   <% if (page.prev || page.next){ %>
   <nav id="article-nav" class="clearfix">
@@ -108,7 +99,7 @@
   if (screen.width < 1236) {
     postJs.setAttribute('src', 'https://blog.lernb.com/js/post-m20200923.js');
   } else {
-    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=05171916');
+    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=05191516');
   }
 </script>
 <% if (theme.showComment && page.comment){ %>

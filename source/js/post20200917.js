@@ -2,7 +2,7 @@ function _(cName) {
   return document.getElementsByClassName(cName);
 }
 const pre = document.getElementsByTagName('pre'),
-  headings = _('post-text')[0].querySelectorAll('h2, h3, h4'),
+  headings = _('entry-content')[0].querySelectorAll('h2, h3, h4'),
   menuTitle = _('post-title-menu')[0] ? _('post-title-menu')[0] : null,
   noteUl = _('noteUl'),
   noteActive = _('noteActive')[0],

@@ -29,9 +29,9 @@
         </div>
       <% } %>
   <% if (is_post() || is_tag() || page.type == 'tags' || page.type == 'note'){ %>
-  <div class="container" style="padding-top: 60px; box-shadow: initial;">
+  <div class="main" style="padding-top: 60px; box-shadow: initial;">
   <% } else { %>
-    <div class="container">
+    <div class="main">
   <% } %>
     <div class="wrap-content clearfix">
       <% if (page.type != 'note' && page.type != 'resume') { %>

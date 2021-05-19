@@ -8,10 +8,10 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  */
 
 code[class*="language-"], pre[class*="language-"] {
-  color: #4c4c4c;
+  color: #5f6c7b;
   background: none;
-  text-shadow: 0 1px white;
-  font-family: cmFont;
+  /* text-shadow: 0 1px white; */
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
   font-size: 14px;
   text-align: left;
   white-space: pre;
@@ -65,9 +65,10 @@ pre[class*="language-"] code {
 
 pre[class*="language-"] {
   position: relative;
-  padding: 1em;
-  margin: .5em 0;
-  overflow-y: hidden;
+  padding: .8em;
+  /* margin: .5em 0; */
+  overflow-y: auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .preAfter::after {
@@ -109,7 +110,7 @@ div[class*="plusBtn"] .preBg {
 }
 
 :not(pre)>code[class*="language-"], pre[class*="language-"] {
-  background: #f7f7f7;
+  background: #f6f8fa;
 }
 
 /* Inline code */
@@ -174,6 +175,7 @@ pre[class*="language-"].line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
+  border-radius: 6px;
 }
 
 pre[class*="language-"].line-numbers>code {
@@ -208,4 +210,10 @@ pre[class*="language-"].line-numbers>code {
   display: block;
   padding-right: 0.8em;
   text-align: right;
+}
+
+@media(max-width:767px) {
+  pre[class*="language-"].line-numbers {
+    border-radius: 0;
+  }
 }
