@@ -1,11 +1,7 @@
 <div class="post-wrap note-wrap">
-  <div class="post note-post">
-    <div class="m-tit">
-      <div class="m-tit-con">
-        <h1><%- page.title %></h1>
-      </div>
-    </div>
-    <div class="post-con">
+  <article class="post note-post">
+    <h1><%- page.title %></h1>
+    <div class="entry">
       <!-- S 文章信息 -->
       <div class="p-info-title">
         <div class="u-img">
@@ -27,12 +23,12 @@
         </div>
       </div>
       <!-- E 文章信息 -->
-      <div class="post-text">
+      <div class="entry-content">
         <%- page.content %>
       </div>
     </div>
     <%- js('js/prism') %>
-  </div>
+  </article>
   <!-- 底部文章列表 -->
   <!-- <div class="bar">
     <h3>近期文章</h3>
