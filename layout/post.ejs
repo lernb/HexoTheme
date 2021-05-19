@@ -1,8 +1,10 @@
 <div class="post-wrap">
   <article class="post">
-    <%- list_tags(page.categories, {
-      show_count: false
-    }) %>
+    <div class="entry-cate">
+      <%- list_tags(page.categories, {
+        show_count: false
+      }) %>
+    </div>
     <h1><%- page.title %></h1>
     <div class="entry">
       <!-- S 文章信息 -->
@@ -99,7 +101,7 @@
   if (screen.width < 1236) {
     postJs.setAttribute('src', 'https://blog.lernb.com/js/post-m20200923.js');
   } else {
-    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=05191516');
+    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=05191517');
   }
 </script>
 <% if (theme.showComment && page.comment){ %>

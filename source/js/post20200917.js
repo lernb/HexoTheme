@@ -4,6 +4,7 @@ function _(cName) {
 const pre = document.getElementsByTagName('pre'),
   headings = _('entry-content')[0].querySelectorAll('h2, h3, h4'),
   menuTitle = _('post-title-menu')[0] ? _('post-title-menu')[0] : null,
+  postMenu = _('post-title-menu-flag')[0],
   noteUl = _('noteUl'),
   noteActive = _('noteActive')[0],
   postHBanner = _('post-h-banner')[0];
@@ -110,13 +111,14 @@ if (headings.length && menuTitle) {
     }
   });
 } else if (!headings.length && menuTitle) {
-  let pNoTitle = document.createElement('p'),
-    noTitle;
-  pNoTitle.style.fontWeight = "bold";
-  pNoTitle.style.cursor = "default";
-  noTitle = document.createTextNode('无标题');
-  pNoTitle.appendChild(noTitle);
-  menuTitle.appendChild(pNoTitle);
+  // let pNoTitle = document.createElement('p'),
+  //   noTitle;
+  // pNoTitle.style.fontWeight = "bold";
+  // pNoTitle.style.cursor = "default";
+  // noTitle = document.createTextNode('无标题');
+  // pNoTitle.appendChild(noTitle);
+  // menuTitle.appendChild(pNoTitle);
+  postMenu.setAttribute('style', 'display: none;');
 }
 
 // if (pre.length) {
