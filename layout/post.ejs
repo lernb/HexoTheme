@@ -17,8 +17,7 @@
           <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
             <% if(page.res && page.res != '原创') { %>
             <a id="reslink" href="<%- page.resLink %>" target="_blank" title="本文转编自：<%- page.res %>">
-
-              <span class="res">转</span><span class="res-link"><%- page.res %></span>
+              <span class="res">源</span><span class="res-link"><%- page.res %></span>
             </a>
             <% } else if(page.res == '原创') { %>
             <span
@@ -39,7 +38,7 @@
           }) %>
     </div>
     <% } %>
-    <script src="https://blog.lernb.com/js/prism.js"></script>
+    <script src="/js/prism.js"></script>
   </article>
   <!-- 文章底部导航 -->
   <% if (page.prev || page.next){ %>
@@ -73,7 +72,7 @@
   <% if (theme.showComment && page.comment){ %>
   <hr class="comm-hr">
   <h3 class="comm-hd">评论</h3>
-  <script src="https://blog.lernb.com/js/valines.js"></script>
+  <script src="/js/valines.js"></script>
   <div id="vcomments"></div>
   <script>
     new Valine({
@@ -99,9 +98,9 @@
 <script type="text/javascript">
   let postJs = document.getElementById('post-js');
   if (screen.width < 1236) {
-    postJs.setAttribute('src', 'https://blog.lernb.com/js/post-m20200923.js');
+    postJs.setAttribute('src', '/js/post-m20200923.js');
   } else {
-    postJs.setAttribute('src', 'https://blog.lernb.com/js/post20200917.js?v=05191517');
+    postJs.setAttribute('src', '/js/post20200917.js?v=05191517');
   }
 </script>
 <% if (theme.showComment && page.comment){ %>
