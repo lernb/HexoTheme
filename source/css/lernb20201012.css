@@ -2019,7 +2019,7 @@ html {
 
 .bar .post-title-menu-flag a {
   /* color: #062743bd; */
-  color: #d8eefe;
+  color: #094067;
 }
 
 .bar .tagcloud a {
@@ -2273,7 +2273,7 @@ html {
 .bar .post-title-menu-flag {
   /* max-height: 650px; */
   padding: 15px;
-  background: #094067;
+  background: #1b1f230d;
   border-radius: 3px;
   /* overflow-x: hidden; */
 }
@@ -2289,14 +2289,14 @@ html {
 }
 
 .bar .post-title-content::-webkit-scrollbar {
-  background-color: #5f6c7b;
+  background-color: #e6e6e6;
   width: 3px;
   height: 0px;
   background-clip: padding-box;
 }
 
 .bar .post-title-content::-webkit-scrollbar-thumb {
-  background-color: #fffffe;
+  background-color: #5f6c7b;
   border-radius: 3px;
 }
 
