@@ -50,7 +50,7 @@
         <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
 
         <!-- 分类 -->
-        <% if (page.type != 'categories' && theme.showCategory){ %>
+        <% if (page.type != 'categories' && !is_post() && theme.showCategory){ %>
           <%- partial('_partial/category') %>
         <% } %>
           
