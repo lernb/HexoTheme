@@ -1,4 +1,4 @@
-<% if(page.type != 'resume') { %>
+<% if(page.type != 'spage') { %>
 <div class="post-wrap">
   <!-- 标签详情页 -->
   <% if (page.type == 'tags'){ %>
@@ -80,9 +80,9 @@
       </ul>
     </div>
     </div>
-    <% } else if(page.type == 'resume') { %>
+    <% } else if(page.type == 'spage') { %>
       <div class="post-wrap" style="width: 100%;">
-      <article class="post">
+      <article class="post spage">
         <h1><%- page.title %></h1>
         <div class="entry">
           <!-- S 文章信息 -->
@@ -91,7 +91,7 @@
             <img src="/asset/u2.jpg" alt="头像">
           </div>
           <div class="u-title">
-            <div class="uname"><span>ler</span></div>
+            <div class="uname"><span><%- theme.uname %></span></div>
             <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
               <% if(page.res && page.res != '原创') { %>
               <a id="reslink" href="<%- page.resLink %>" target="_blank" title="来源：<%- page.res %>">

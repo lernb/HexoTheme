@@ -9,12 +9,13 @@
 @font-face {
   font-family: 'webfont';
   font-display: swap;
-  src: url('//at.alicdn.com/t/webfont_01wtuewqwgho.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_01wtuewqwgho.eot');
+  /* IE9*/
   src: url('//at.alicdn.com/t/webfont_01wtuewqwgho.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_01wtuewqwgho.woff2') format('woff2'),
-  url('//at.alicdn.com/t/webfont_01wtuewqwgho.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_01wtuewqwgho.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_01wtuewqwgho.woff') format('woff'), /* chrome、firefox */
   url('//at.alicdn.com/t/webfont_01wtuewqwgho.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_01wtuewqwgho.svg#Alibaba-PuHuiTi-Regular') format('svg'); /* iOS 4.1- */
+  url('//at.alicdn.com/t/webfont_01wtuewqwgho.svg#Alibaba-PuHuiTi-Regular') format('svg');
+  /* iOS 4.1- */
 }
 
 .wrap-bd {
@@ -138,8 +139,8 @@
   position: relative;
   /* overflow: hidden; */
   /* border-radius: 10px; */
-  /* margin-bottom: 20px; */
-  padding: 20px 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   height: 217px;
   /* background-color: #fff; */
   /* box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); */
@@ -379,7 +380,7 @@
   /* height: 42px; */
   line-height: 1;
   /* overflow: hidden; */
-  font-size: 22px;
+  font-size: 24px;
   /* vertical-align: top; */
 }
 
@@ -908,9 +909,11 @@ strong {
 
 .foot-content {
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #fff;
   padding-top: 0;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
 }
 
 .wrap-content a {
@@ -1154,6 +1157,9 @@ strong {
   }
   .wrap-content {
     width: 100%;
+  }
+  .foot-content {
+    width: 90%;
   }
   #cate-hd {
     display: block;
@@ -2023,12 +2029,12 @@ html {
 }
 
 .bar .tagcloud a {
-  margin: 0 3px 10px;
+  margin: 0 0 7px;
   padding: 0 8px;
   font-weight: 600;
   color: #094067;
   border-radius: 10px;
-  border: 1px solid #094067;
+  border: 1px solid #094067a8;
   text-align: center;
   vertical-align: bottom;
   transition: transform .2s;
@@ -2273,8 +2279,9 @@ html {
 .bar .post-title-menu-flag {
   /* max-height: 650px; */
   padding: 15px;
-  background: #1b1f230d;
-  border-radius: 3px;
+  /* background: #1b1f230d; */
+  border: 1px solid #1b1f231c;
+  border-radius: 6px;
   /* overflow-x: hidden; */
 }
 
@@ -2289,14 +2296,14 @@ html {
 }
 
 .bar .post-title-content::-webkit-scrollbar {
-  background-color: #e6e6e6;
+  background-color: #f5f5f5;
   width: 3px;
   height: 0px;
   background-clip: padding-box;
 }
 
 .bar .post-title-content::-webkit-scrollbar-thumb {
-  background-color: #5f6c7b;
+  background-color: #dddddd;
   border-radius: 3px;
 }
 
@@ -2336,7 +2343,7 @@ html {
 }
 
 .bar .post-title-menu a:hover {
-  color: #d8eefe;
+  color: #fff;
   background-color: #18a0db;
 }
 
@@ -2472,6 +2479,13 @@ html {
   text-align: justify;
   word-break: normal;
   word-wrap: break-word;
+}
+
+.post-wrap .post.spage {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 45px 65px;
+  margin-top: 15px;
 }
 
 .post-wrap .post .post-h-banner {
@@ -2657,6 +2671,7 @@ html {
 } */
 
 /* 文章标题顶部标签 S */
+
 .post-wrap .entry-cate .tag-list .tag-list-link {
   padding: 2px 12px;
   height: 20px;
@@ -2678,6 +2693,7 @@ html {
 .post-wrap .entry-cate .tag-list .tag-list-link:hover {
   transform: scale(1.08);
 }
+
 /* 文章标题顶部标签 E */
 
 .post-wrap .post h1 {
@@ -3564,11 +3580,14 @@ code {
   .post-wrap .post h1 {
     box-sizing: border-box;
     width: 100%;
-    padding-left: calc(5% - 6px);
+    padding-left: 5%;
     padding-right: 5%;
-    border-left: 6px solid #18a0db;
     font-size: 2.8rem;
     font-weight: bold;
+  }
+  .post-wrap .post h1.post-article {
+    padding-left: calc(5% - 6px);
+    border-left: 6px solid #18a0db;
   }
   .post .entry-content h2 {
     font-size: 2.5rem;
@@ -3601,6 +3620,13 @@ code {
     margin: 0 auto;
     padding: 0 0 45px;
     box-shadow: 0 0 15px 0px rgba(154, 154, 154, 0.15);
+  }
+  .post-wrap .post.spage {
+    border: none;
+    border-radius: initial;
+    padding: initial;
+    margin-top: 0;
+    padding-top: 10px;
   }
   /* .post-wrap .post h1 {
     color: #29363d;

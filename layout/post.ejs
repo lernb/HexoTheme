@@ -5,7 +5,7 @@
         show_count: false
       }) %>
     </div>
-    <h1><%- page.title %></h1>
+    <h1 class="post-article"><%- page.title %></h1>
     <div class="entry">
       <!-- S 文章信息 -->
       <div class="p-info-title">
@@ -13,7 +13,7 @@
           <img src="<%- theme.userhead %>" alt="头像">
         </div>
         <div class="u-title">
-          <div class="uname"><span>ler</span></div>
+          <div class="uname"><span><%- theme.uname %></span></div>
           <div class="post-date"><span><%- date(page.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;
             <% if(page.res && page.res != '原创') { %>
             <a id="reslink" href="<%- page.resLink %>" target="_blank" title="本文转编自：<%- page.res %>">
