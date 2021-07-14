@@ -139,14 +139,19 @@
   position: relative;
   /* overflow: hidden; */
   /* border-radius: 10px; */
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   padding-bottom: 20px;
-  height: 217px;
+  height: 237px;
   /* background-color: #fff; */
   /* box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); */
   border-bottom: 1px solid #eee;
   transition: all 0.3s;
 }
+
+.p-list .p-list-item:hover .p-list-item-title a {
+  color: #18a0db;
+}
+
 
 .p-list .p-list-item:last-child {
   border-bottom: none;
@@ -175,7 +180,7 @@
 
 /* } */
 
-.p-list .p-list-item:hover .post-img img {
+.p-list .p-list-item .post-img:hover img {
   transform: scale(1.07);
 }
 
@@ -193,7 +198,7 @@
   text-align: justify;
   word-break: normal;
   word-wrap: break-word;
-  color: #094067;
+  color: #454545;
   transition: all 0.2s;
   line-height: 1.3;
   /* margin-bottom: 5px; */
@@ -211,7 +216,7 @@
 .p-list .zy {
   margin-top: 3px;
   font-size: 15px;
-  color: #5f6c7b;
+  color: #999;
   word-break: break-all;
   line-height: 1.6;
   overflow: hidden;
@@ -302,8 +307,8 @@
 
 .p-list .p-list-item .post-img {
   float: left;
-  width: 210px;
-  height: 140px;
+  width: 240px;
+  height: 160px;
   /* overflow: hidden; */
   /* transform: scale(.9); */
   margin-right: 20px;
@@ -343,7 +348,7 @@
   background: linear-gradient(180deg, rgba(24, 160, 219, .01) 2%, rgba(24, 160, 219, .95) 100%);
   opacity: 0;
   border-bottom-left-radius: 10px;
-  transition: opacity .3s ease-in-out;
+  transition: opacity .3s;
 }
 
 /* .p-list-item .post-img a:hover .overlay {
@@ -357,7 +362,7 @@
   min-height: -moz-fill-available;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  transition: all .6s;
+  transition: all .5s;
 }
 
 .p-list-item .post-info {
@@ -380,7 +385,7 @@
   /* height: 42px; */
   line-height: 1;
   /* overflow: hidden; */
-  font-size: 24px;
+  font-size: 22px;
   /* vertical-align: top; */
 }
 
@@ -710,7 +715,25 @@ strong {
   position: relative;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  box-shadow: 0 -11px 18px -6px rgb(154 154 154 / 25%);
+  box-shadow: 0 -11px 18px -12px rgb(0, 0, 0, 0.15);
+  /* background-color: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px); */
+  z-index: 2;
+}
+
+@supports (-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px)) {
+  .main {
+    background-color: rgba(255, 255, 255, 0.79);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    backdrop-filter: saturate(180%) blur(40px);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .main {
+    background-color: #fff;
+  }
 }
 
 .banner-back {
@@ -720,6 +743,32 @@ strong {
   /* margin-bottom: 20px; */
   /* margin-top: 80px; */
   /* border-radius: 10px; */
+}
+
+.bb-round {
+  position: fixed;
+  top: 80px;
+  left: 70%;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255 255 255 / 45%);
+  backdrop-filter: saturate(180%) blur(5px);
+  border-radius: 50%;
+  box-shadow: 0 0 12px 1px #00000000;
+  z-index: 1;
+}
+
+.bb-qu {
+  position: fixed;
+  top: 100px;
+  left: 20%;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255 255 255 / 45%);
+  backdrop-filter: saturate(180%) blur(5px);
+  /* border-radius: 50%; */
+  box-shadow: 0 0 12px 1px #00000000;
+  z-index: 1;
 }
 
 /* .banner-back::before {
@@ -734,8 +783,9 @@ strong {
 } */
 
 .banner-back .banner-content {
-  position: absolute;
-  top: calc(50% - 45px + 55px);
+  position: fixed;
+  /* top: calc(50% - 45px + 55px); */
+  top: 80px;
   left: calc(50% - 45px);
   /* width: 300px;
   height: 200px; */
@@ -744,8 +794,8 @@ strong {
 .banner-back .au-head {
   display: block;
   box-sizing: border-box;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto;
   border-radius: 50%;
   border: 3px solid #fff;
@@ -949,7 +999,7 @@ strong {
   font-size: 12px;
   color: #7e7e7e;
   font-weight: bold;
-  background: url("/asset/icon.png") no-repeat 0 4px;
+  background: url("/asset/icon.png") no-repeat 3px 4px;
   background-size: 13px;
   cursor: default;
 }
@@ -3446,9 +3496,6 @@ code {
   /* .wrap .banner-back {
     display: none;
   } */
-  .main {
-    background-color: #fff;
-  }
   #pageNav .extend {
     font-size: 1.4rem;
   }
