@@ -724,7 +724,7 @@ strong {
 
 @supports (-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px)) {
   .main {
-    background-color: rgba(255, 255, 255, 0.79);
+    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: saturate(180%) blur(40px);
     backdrop-filter: saturate(180%) blur(40px);
   }
