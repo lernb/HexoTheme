@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<%- partial('_partial/head') %>
-
-<body class="line-numbers">
+  
+  <%- partial('_partial/head') %>
+  
+  <body class="line-numbers">
+  
   <div class="pgbar">
     <div class="bar-in"></div>
   </div>
@@ -18,16 +19,16 @@
     }
   </script> -->
 <!-- <body onload="prettyPrint();" class="line-numbers"> 旧款代码高亮 -->
-  <%- partial('_partial/header') %>
+  <% if (!is_home()) { %>
+    <%- partial('_partial/header') %>
+    <% } %>
     <div class="wrap clearfix">
       <% if (!is_post() && page.type != 'tags' && page.type != 'note') { %>
         <div class="banner-back" style="position: relative;">
-          <!-- <div class="bb-round">哈喽！</div>
-          <div class="bb-qu">哈喽！</div> -->
           <div class="bannerBg" style="position: fixed; top: 0; left: 0; right: 0; height: 280px; background: #25566b url('<%- theme.bannerBg %>') center 50% no-repeat; background-size: cover;"></div>
-          <div class="banner-content">
+          <!-- <div class="banner-content">
             <img class="au-head" src="<%- theme.userhead %>" alt="头像" title="这是头像！">
-          </div>
+          </div> -->
         </div>
       <% } %>
   <% if (is_post() || page.type == 'tags' || page.type == 'note'){ %>
@@ -52,19 +53,19 @@
         <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
 
         <!-- 分类 -->
-        <% if (page.type != 'categories' && !is_post() && theme.showCategory){ %>
+        <% if (!is_home() && page.type != 'categories' && !is_post() && theme.showCategory){ %>
           <%- partial('_partial/category') %>
         <% } %>
           
         <!-- <hr style="border: 0;border-top: 1px solid #eaecef;"> -->
           
         <!-- 归档 -->
-        <% if (theme.showArchive){ %>
+        <% if (!is_home() && theme.showArchive){ %>
           <%- partial('_partial/archive') %>
         <% } %>
             
         <!-- 标签 -->
-        <% if (page.type != 'tags' && theme.showTag){ %>
+        <% if (!is_home() && page.type != 'tags' && !is_post() && theme.showTag){ %>
           <%- partial('_partial/tag') %>
         <% } %>
 
@@ -80,7 +81,7 @@
       </div>
     </div>
     </div>
-    <% if (page.type != 'note'){ %>
+    <% if (!is_home() && page.type != 'note'){ %>
       <%- partial('_partial/footer') %>
     <% } %>
   <script id="layout-js"></script>

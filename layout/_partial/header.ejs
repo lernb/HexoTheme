@@ -1,4 +1,4 @@
-<% if(is_home() || is_category() || page.type == 'spage' || is_tag()) { %>
+<% if(is_home() || is_category() || page.type == 'spage' || is_tag() || is_archive()) { %>
   <div class="headhead headlo headbdf headbdfAfter tshadow">
   <script>
     let indexTimer,
@@ -43,9 +43,16 @@
       <ul id="header-btn">
         <li>
           <% if (is_home()){ %>
-          <a href="/" class="home-btn hoverLine hoverLineActive">首页</a>
+          <a href="/" class="hoverLine hoverLineActive" style="padding-left: 0;">主页</a>
           <% } else { %>
-          <a href="/" class="home-btn hoverLine">首页</a>
+          <a href="/" class="hoverLine" style="padding-left: 0;">主页</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (is_archive()){ %>
+          <a href="/articles" class="hoverLine hoverLineActive" style="padding-left: 0;">文章</a>
+          <% } else { %>
+          <a href="/articles" class="hoverLine" style="padding-left: 0;">文章</a>
           <% } %>
         </li>
         <li>
@@ -78,7 +85,8 @@
       <!-- author -->
 
       <div class="headerMenu">
-        <a href="/">首页</a>
+        <a href="/">主页</a>
+        <a href="/articles">文章</a>
         <a href="/tags">标签</a>
         <a href="/note/note-intro.html">学习</a>
         <!-- <a href="/categories">分类</a> -->
