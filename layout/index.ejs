@@ -10,7 +10,7 @@
   <% } %>
     <div id="index-header" class="wrap-bd clearfix" style="width: initial; height: 100%; display: flex; flex-direction: column; align-items: center;">
       <img class="au-head" src="<%- theme.userhead %>" alt="头像" title="这是头像！" style="box-sizing: border-box; width: 10rem; height: 10rem; margin-top: -6rem; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 -20px 20px -20px rgb(0 0 0 / 40%);">
-      <h1 style="display: inline-block;">
+      <h1 class=" animate__fadeInUp" style="display: inline-block;">
         <a class="header-img" href="/" target="_self" title="LERNB">
           <%- theme.sitename %>
         </a>
@@ -28,7 +28,7 @@
           loop: false
         });
       </script>
-      <ul id="header-btn" class="index-header-btn" style="float: initial; margin-left: 0; margin-top: 1rem;">
+      <ul id="header-btn" class="index-header-btn animate__fadeInUp" style="float: initial; margin-left: 0; margin-top: 1rem;">
         <li>
           <% if (is_home()){ %>
           <a href="/" class="hoverLine hoverLineActive" style="padding-left: 0;">主页</a>
