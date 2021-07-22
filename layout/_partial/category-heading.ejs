@@ -1,9 +1,9 @@
 <div id="cate-hd">
-  <% if(is_home()) { %>
-    <a href="/"
+  <% if(is_archive()) { %>
+    <a href="/articles"
       style="background: linear-gradient(-90deg, rgb(121 199 255) 10%, rgb(24 160 219) 100%); color: #fff;">最近</a><!--
   --><% } else { %> <!--
-    --><a href="/">最近</a><!--
+    --><a href="/articles">最近</a><!--
     --><% } %><!--
     --><%- list_categories({show_count: false}) %>
 </div>
