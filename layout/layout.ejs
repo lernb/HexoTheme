@@ -37,7 +37,7 @@
     <div class="main">
   <% } %>
     <div class="wrap-content clearfix">
-      <% if (page.type != 'note' && page.type != 'spage') { %>
+      <% if (page.type != 'note' && page.type != 'spage' && !is_archive()) { %>
       <div class="bar barbar">
         <!-- <div class="barside"> -->
         <!-- S 侧栏插件 -->
