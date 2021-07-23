@@ -1,9 +1,7 @@
 menu:
   Home: /
-  Archives: /archives
-  categories: /categories
-  tags: /tags
-  resume: /resume
+  categories: /c
+  tags: /t
 
 sitename: LERNB
 sitedomain: https://lernb.com

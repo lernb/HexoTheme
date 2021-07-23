@@ -13,7 +13,7 @@
   <% page.posts.each(function (post) { %>
     <div class="a-list-item">
       <div class="a-list-item-img-body">
-        <a class="a-list-item-img-content" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');"></a>
+        <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');"></a>
       </div>
       <div class="a-list-item-content">
         <div class="a-list-item-content-cate">
@@ -41,14 +41,14 @@
 <% site.categories.map(function(category){ %>
   <div class="a-index-cate-h">
     <span class="a-index-cate-content"><%= category.name %></span>
-    <a href="/categories/<%- category.name %>/" class="a-index-more">浏览全部</a>
+    <a href="/c/<%- category.name %>/" class="a-index-more">浏览全部</a>
   </div>
   <div id="a-index-cate-wrap">
     <div id="a-index" class="a-index-cate left">
       <% category.posts.sort('-date').limit(1).map(function(post, i){  %>
         <div class="a-list-item">
-          <div class="a-list-item-img-body">
-            <a class="a-list-item-img-content" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+          <div class="a-list-item-img-body" style="padding-top: 65.8%;">
+            <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
               <span class="overhid"></span>
             </a>
             <div class="a-list-item-content">
@@ -63,10 +63,10 @@
       <% }) %>
     </div>
     <div id="a-index" class="a-index-cate right">
-      <% category.posts.sort('-date').limit(6).map(function(post, i){  %>
+      <% category.posts.sort('-date').limit(7).map(function(post, i){  %>
         <div class="a-list-item">
           <div class="a-list-item-img-body">
-            <a class="a-list-item-img-content" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+            <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
               <span class="overhid"></span>
             </a>
             <div class="a-list-item-content">

@@ -6,8 +6,7 @@
     <% site.posts.sort('date', -1).limit(4).each(function(post){ %>
       <!-- <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span> -->
       <!-- <li class="post-item"><a href="<%- url_for(post.path) %>"><%- post.title || '无标题' %></a></li> -->
-      <li class="p-list-item clearfix"
-        style="border-radius: 10px;">
+      <li class="p-list-item clearfix" style="border-radius: 10px;">
         <!-- S 文章图片 -->
         <% if(post.img) { %>
           <div class="post-img" style="display: inline-block; width: 28%; vertical-align: bottom;">
