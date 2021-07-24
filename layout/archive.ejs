@@ -32,7 +32,7 @@
     <% }) %>
 </div>
 <% if (page.total> 1){ %>
-  <div id="pageNav" style="clear: both;">
+  <div id="pageNav" class="aIndexPageNav" style="clear: both;">
     <% var prev_text=__('上一页');var next_text=__('下一页') %>
       <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
   </div>

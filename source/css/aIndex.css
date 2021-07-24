@@ -137,7 +137,7 @@
   background-color: rgba(24, 161, 219, 0.259);
 }
 
-#pageNav {
+#pageNav.aIndexPageNav {
   display: none;
 }
 
@@ -211,7 +211,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(to bottom, rgb(49, 49, 48, 0), rgba(22, 29, 39, .9));
-  opacity: .5;
+  opacity: .7;
 }
 
 #a-index-cate-wrap .a-list-item-img-body .a-list-item-content {
@@ -264,7 +264,7 @@
   #a-index .a-list-item-content-cate {
     font-size: 1rem;
   }
-  #pageNav {
+  #pageNav.aIndexPageNav {
     display: block;
   }
 }
