@@ -34,7 +34,7 @@
   border: 1px solid #eee;
   border-radius: 7px;
   overflow: hidden;
-  transform: rotate(0deg); 
+  transform: rotate(0deg);
   /* transform: translate3d(0, 0, 0); */
 }
 
@@ -102,6 +102,14 @@
 .a-index-cate-h {
   display: flex;
   align-items: center;
+}
+
+#a-index-cate-wrap .a-index-cate-h {
+  display: none;
+}
+
+#a-index-cate-wrap .a-index-more.a-index-more-m {
+  display: none;
 }
 
 .a-index-cate-h::before {
@@ -246,10 +254,36 @@
   #a-index {
     width: calc(90% + 1.2rem);
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
-  #a-index.a-index-cate, .a-index-cate-h, #a-index-pageNav, #a-index-cate-wrap {
+  /* #a-index.a-index-cate, .a-index-cate-h, #a-index-pageNav, #a-index-cate-wrap {
     display: none;
+  } */
+  .a-index-cate-h, #a-index-cate-wrap .a-index-more {
+    display: none;
+  }
+  #a-index-cate-wrap .a-index-cate-h {
+    display: flex;
+    width: calc(100% - 1.2rem);
+    margin: 0 auto;
+  }
+  #a-index-cate-wrap {
+    flex-direction: column;
+    width: calc(90% + 1.2rem);
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  #a-index-cate-wrap:last-child {
+    margin-bottom: 0;
+  }
+  #a-index-cate-wrap .left {
+    width: 100%;
+  }
+  #a-index-cate-wrap .right {
+    width: 100%;
+  }
+  #a-index-cate-wrap .right .a-list-item {
+    width: 50%;
   }
   #a-index .a-list-item {
     width: 50%;
@@ -266,5 +300,34 @@
   }
   #pageNav.aIndexPageNav {
     display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: initial;
+    margin-bottom: 20px;
+    padding: 0 calc(5%);
+    padding-bottom: 30px;
+    box-shadow: 0 12px 15px 0px rgb(154 154 154 / 10%);
+  }
+  #a-index-cate-wrap .a-index-more.a-index-more-m {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 1.2rem);
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #b3dbf0;
+    color: #18a0db;
+    font-size: 1.4rem;
+  }
+  .a-index-more.a-index-more-m:hover::before {
+    width: 0;
+  }
+  #a-index-cate-wrap .left .a-list-item-content a {
+    font-size: 1.5rem;
+  }
+  #a-index-cate-wrap .right .a-list-item-content a {
+    font-size: 1.3rem;
   }
 }

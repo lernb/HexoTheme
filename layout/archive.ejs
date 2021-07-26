@@ -10,26 +10,6 @@
 </div>
 <div id="a-index">
   <% page.posts.each(function (post) { %>
-    <% if (page.path == 'p/index.html'){ %>
-      <div class="a-list-item">
-        <div class="a-list-item-img-body">
-          <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');"></a>
-        </div>
-        <div class="a-list-item-content">
-          <div class="a-list-item-content-cate">
-            <%- list_tags(post.categories, { show_count: false }) %>
-            <span>
-              <%- date(post.date, "YYYY-MM-DD" ) %>
-            </span>
-          </div>
-          <h1>
-            <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
-              <%= post.title %>
-            </a>
-          </h1>
-        </div>
-      </div>
-    <% } else { %>
     <div class="a-list-item">
       <div class="a-list-item-img-body">
         <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');"></a>
@@ -48,13 +28,12 @@
         </h1>
       </div>
     </div>
-    <% } %>
-    <% }) %>
+  <% }) %>
 </div>
 <% if (page.total> 1){ %>
   <div id="pageNav" class="aIndexPageNav" style="clear: both;">
     <% var prev_text=__('上一页');var next_text=__('下一页') %>
-      <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
+    <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
   </div>
 <% } %>
 
@@ -65,6 +44,10 @@
       <a href="/c/<%- category.name %>/" class="a-index-more">浏览全部</a>
     </div>
     <div id="a-index-cate-wrap">
+      <div class="a-index-cate-h">
+        <span class="a-index-cate-content"><%= category.name %></span>
+        <a href="/c/<%- category.name %>/" class="a-index-more">浏览全部</a>
+      </div>
       <div id="a-index" class="a-index-cate left">
         <% category.posts.sort('-date').limit(1).map(function(post, i){  %>
           <div class="a-list-item">
@@ -101,6 +84,7 @@
           </div>
         <% }) %>
       </div>
+      <a href="/c/<%- category.name %>/" class="a-index-more a-index-more-m">浏览全部</a>
     </div>
   <% } %>
 <% }) %>
