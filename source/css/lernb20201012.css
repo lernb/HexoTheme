@@ -3476,7 +3476,7 @@ code {
 
 #article-nav .article-nav-link-wrap:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 12px 0px rgb(24 160 219 / 25%);
+  box-shadow: 0 0 16px 0px rgb(24 160 219 / 58%);
 }
 
 #article-nav .article-nav-link-wrap:hover::before {
