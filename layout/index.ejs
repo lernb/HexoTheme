@@ -9,37 +9,14 @@
   </div>
   <% } %>
     <div id="index-header" class="wrap-bd clearfix" style="width: initial; height: 100%; display: flex; flex-direction: column; align-items: center;">
-      <div class="head-img-body" style="width: 10rem; height: 10rem; border-radius: 50%; margin-top: -6rem; overflow: hidden; transform: rotate3d(0); background-color: #fbeecb;">
+      <div class="head-img-body" style="width: 10rem; height: 10rem; border-radius: 50%; margin-top: -6rem; overflow: hidden; transform: rotate3d(0); background-color: #fff;">
         <img class="au-head" src="<%- theme.userhead %>" alt="头像" title="这是头像！" style="box-sizing: border-box; width: 100%; height: 100%; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 -20px 20px -20px rgb(0 0 0 / 40%);">
       </div>
-      <h1 class=" animate__fadeInUp" style="display: inline-block;">
+      <h1 class="animate__fadeInUp" style="display: inline-block;">
         <a class="header-img" href="/" target="_self" title="LERNB" style="background-image: url('<%- theme.headImg %>');">
           <%- theme.sitename %>
         </a>
       </h1>
-      <div class="hello">
-        <span class="firstS"></span>
-        <span class="secondS"></span>
-      </div>
-      <script>
-        var typed = new Typed('.firstS', {
-          strings: ["哈喽！"],
-          typeSpeed: 100,
-          backSpeed: 80,
-          backDelay: 500,
-          startDelay: 600,
-          loop: false,
-          showCursor: false
-        });
-        var typed = new Typed('.secondS', {
-          strings: ["很高兴被你发现"],
-          typeSpeed: 90,
-          backSpeed: 80,
-          backDelay: 800,
-          startDelay: 1100,
-          loop: false
-        });
-      </script>
       <ul id="header-btn" class="index-header-btn animate__fadeInUp" style="float: initial; margin-left: 0; margin-top: 1rem;">
         <li>
           <% if (is_home()){ %>
@@ -63,16 +40,27 @@
           <% } %>
         </li>
       </ul>
+      <div class="hello">
+        <span class="firstS"></span>
+        <span class="secondS"></span>
+      </div>
+      <script>
+        var typed = new Typed('.firstS', {
+          strings: ["哈喽！"],
+          typeSpeed: 100,
+          backSpeed: 80,
+          backDelay: 500,
+          startDelay: 600,
+          loop: false,
+          showCursor: false
+        });
+        var typed = new Typed('.secondS', {
+          strings: ["很高兴被你发现"],
+          typeSpeed: 90,
+          backSpeed: 80,
+          backDelay: 800,
+          startDelay: 1100,
+          loop: false
+        });
+      </script>
     </div>
-    <script>
-      let indexWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
-        // bo = document.getElementsByTagName('body')[0],
-        // wr = document.getElementsByClassName('wrap')[0],
-        ma = document.getElementsByClassName('main')[0];
-        // wrc = document.getElementsByClassName('wrap-content')[0];
-      // bo.style.height = indexWindowHeight + 'px';
-      // wr.style.height = 'calc(100% - 131px)';
-      // ma.style.height = 'calc(100% - 230px)';
-      ma.style.backgroundColor = '#fff';
-      // wrc.style.height = '100%';
-    </script>
