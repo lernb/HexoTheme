@@ -1033,6 +1033,7 @@ strong {
   color: #8b93a9;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   font-weight: bold;
+  line-height: 1.4;
 }
 
 .p-info-title .u-title .post-date {
