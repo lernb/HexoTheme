@@ -184,7 +184,7 @@
   justify-content: space-between;
   margin-left: -.6rem;
   margin-right: -.6rem;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 #a-index-cate-wrap .left {
@@ -315,7 +315,7 @@
     height: 35px;
     line-height: 35px;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     margin-top: 10px;
     background-color: #b3dbf0;
     color: #18a0db;

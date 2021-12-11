@@ -38,51 +38,52 @@
 <% } %>
 
 <% site.categories.map(function(category){ %>
-  <div class="a-index-cate-h">
-    <span class="a-index-cate-content"><%= category.name %></span>
-    <a href="/c/<%- category.name %>/" class="a-index-more">浏览全部</a>
-  </div>
-  <div id="a-index-cate-wrap">
+  <div class="index-list">
     <div class="a-index-cate-h">
       <span class="a-index-cate-content"><%= category.name %></span>
-      <a href="/c/<%- category.name %>/" class="a-index-more">浏览全部</a>
+      <a href="/c/<%- category.name %>/" class="a-index-more">浏览更多 ></a>
     </div>
-    <div id="a-index" class="a-index-cate left">
-      <% category.posts.sort('-date').limit(1).map(function(post, i){  %>
-        <div class="a-list-item">
-          <div class="a-list-item-img-body" style="padding-top: 65.8%;">
-            <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
-              <span class="overhid"></span>
-            </a>
-            <div class="a-list-item-content">
-              <h1>
-                <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
-                  <%= post.title %>
-                </a>
-              </h1>
+    <div id="a-index-cate-wrap">
+      <div class="a-index-cate-h">
+        <span class="a-index-cate-content"><%= category.name %></span>
+      </div>
+      <div id="a-index" class="a-index-cate left">
+        <% category.posts.sort('-date').limit(1).map(function(post, i){  %>
+          <div class="a-list-item">
+            <div class="a-list-item-img-body" style="padding-top: 65.8%;">
+              <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+                <span class="overhid"></span>
+              </a>
+              <div class="a-list-item-content">
+                <h1>
+                  <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                    <%= post.title %>
+                  </a>
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-      <% }) %>
-    </div>
-    <div id="a-index" class="a-index-cate right">
-      <% category.posts.sort('-date').limit(7).map(function(post, i){  %>
-        <div class="a-list-item">
-          <div class="a-list-item-img-body">
-            <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
-              <span class="overhid"></span>
-            </a>
-            <div class="a-list-item-content">
-              <h1>
-                <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
-                  <%= post.title %>
-                </a>
-              </h1>
+        <% }) %>
+      </div>
+      <div id="a-index" class="a-index-cate right">
+        <% category.posts.sort('-date').limit(7).map(function(post, i){  %>
+          <div class="a-list-item">
+            <div class="a-list-item-img-body">
+              <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+                <span class="overhid"></span>
+              </a>
+              <div class="a-list-item-content">
+                <h1>
+                  <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                    <%= post.title %>
+                  </a>
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-      <% }) %>
+        <% }) %>
+      </div>
+      <a href="/c/<%- category.name %>/" class="a-index-more a-index-more-m">浏览更多</a>
     </div>
-    <a href="/c/<%- category.name %>/" class="a-index-more a-index-more-m">浏览全部</a>
   </div>
 <% }) %>

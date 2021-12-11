@@ -1,5 +1,10 @@
 <div class="post-wrap">
   <article class="post">
+    <% if(page.titleBg)  { %>
+      <div class="title-bg" style="margin-bottom: 16px;">
+        <img src="<%- page.titleBg %>" alt="背景图片">
+      </div>
+    <% } %>
     <div class="entry-cate">
       <%- list_tags(page.categories, {
         show_count: false
@@ -21,7 +26,7 @@
             </a>
             <% } else if(page.res == '原创') { %>
             <span
-              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #18a0db; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
+              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #7ac8ff; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
             <% } %>
           </div>
         </div>

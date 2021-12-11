@@ -3185,7 +3185,7 @@ code {
   display: none;
 }
 
-.post-wrap .entry-content img {
+.post-wrap .entry-content img, .post-wrap .title-bg img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -3758,7 +3758,7 @@ code {
   .post-wrap .headimg::after {
     filter: blur(2px);
   }
-  .post-wrap .entry-content img {
+  .post-wrap .entry-content img, .post-wrap .title-bg img {
     max-width: initial;
     /* margin: 0 auto; */
     width: calc(100% / 0.9);
