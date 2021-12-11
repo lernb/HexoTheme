@@ -12,13 +12,13 @@ code[class*="language-"], pre[class*="language-"] {
   background: none;
   /* text-shadow: 0 1px white; */
   font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.8;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -65,7 +65,7 @@ pre[class*="language-"] code {
 
 pre[class*="language-"] {
   position: relative;
-  padding: .8em;
+  padding: 1em;
   /* margin: .5em 0; */
   overflow-y: auto;
   -webkit-overflow-scrolling:touch;
@@ -121,8 +121,17 @@ div[class*="plusBtn"] .preBg {
   white-space: normal;
 }
 
-.token.comment, .token.prolog, .token.doctype, .token.cdata {
+/* .token.comment, .token.prolog, .token.doctype, .token.cdata {
   color: slategray;
+} */
+.token.prolog, .token.doctype, .token.cdata {
+  color: slategray;
+}
+
+.token.comment {
+  font-size: 12px;
+  font-style: italic;
+  color: #b2b2b5;
 }
 
 .token.punctuation {
@@ -173,7 +182,7 @@ div[class*="plusBtn"] .preBg {
 
 pre[class*="language-"].line-numbers {
   position: relative;
-  padding-left: 3.8em;
+  padding-left: 1.6em;
   counter-reset: linenumber;
   border-radius: 6px;
 }
@@ -205,11 +214,13 @@ pre[class*="language-"].line-numbers>code {
 }
 
 .line-numbers-rows>span:before {
-  content: counter(linenumber);
+  /* content: counter(linenumber); */
+  content: '';
   color: #999;
   display: block;
   padding-right: 0.8em;
   text-align: right;
+  line-height: 1.87;
 }
 
 @media(max-width:767px) {

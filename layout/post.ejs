@@ -1,5 +1,10 @@
 <div class="post-wrap">
   <article class="post">
+    <% if(page.titleBg)  { %>
+      <div class="title-bg" style="margin-bottom: 16px;">
+        <img src="<%- page.titleBg %>" alt="背景图片">
+      </div>
+    <% } %>
     <div class="entry-cate">
       <%- list_tags(page.categories, {
         show_count: false
@@ -21,7 +26,7 @@
             </a>
             <% } else if(page.res == '原创') { %>
             <span
-              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #18a0db; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
+              style="display: inline-block; border-radius:3px; padding: 2px 2px; background-color: #7ac8ff; height: 12px; line-height: 12px; color: #fff; font-size: 12px;">原创</span>
             <% } %>
           </div>
         </div>
@@ -43,24 +48,30 @@
   <!-- 文章底部导航 -->
   <% if (page.prev || page.next){ %>
   <nav id="article-nav" class="clearfix">
-    <% if (page.prev){ %>
-    <a href="<%- url_for(page.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-title">
+    <% if (page.next){ %>
+    <a href="<%- url_for(page.next.path) %>" id="article-nav-newer" class="article-nav-link-wrap" style="position: relative; background: rgba(120, 120, 120, 0.1) url('<%- url_for(page.next.img) %>') no-repeat center center; background-size: cover; overflow: hidden; transform: rotate(0deg);">
+      <div class="overhid" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgb(22 29 39 / 60%), rgb(22 29 39 / 60%)); opacity: .75;"></div>
+      <div class="article-nav-title" style="position: relative; z-index: 1;">
         <strong class="article-nav-caption" style="display: block;">&lt;&lt;上一篇</strong>
-        <% if (page.prev.title){ %>
-        <span class="hoverLine hoverLine-thin"><%= page.prev.title %></span>
+        <% if (page.next.title){ %>
+          <span class="hoverLine hoverLine-thin"><%= page.next.title %></span>
         <% } else { %>
         <span>(无标题)</span>
         <% } %>
       </div>
     </a>
     <% } %>
-    <% if (page.next){ %>
-    <a href="<%- url_for(page.next.path) %>" id="article-nav-older" class="article-nav-link-wrap"
-      style="text-align: right;">
-      <div class="article-nav-title">
+    <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>" id="article-nav-older" class="article-nav-link-wrap"
+      style="position: relative; background: rgba(120, 120, 120, 0.1) url('<%- url_for(page.prev.img) %>') no-repeat center center; background-size: cover; overflow: hidden; transform: rotate(0deg); text-align: right;">
+      <div class="overhid" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgb(22 29 39 / 60%), rgb(22 29 39 / 60%)); opacity: .75;"></div>
+      <div class="article-nav-title" style="position: relative; z-index: 1;">
         <strong class="article-nav-caption" style="display: block;">下一篇&gt;&gt;</strong>
-        <span class="hoverLine hoverLine-thin"><%= page.next.title %></span>
+        <% if (page.prev.title){ %>
+          <span class="hoverLine hoverLine-thin"><%= page.prev.title %></span>
+        <% } else { %>
+          <span>(无标题)</span>
+        <% } %>
       </div>
     </a>
     <% } %>

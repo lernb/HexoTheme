@@ -1,110 +1,89 @@
-<div class="wrap-bd clearfix">
-  <%- partial('_partial/category-heading') %>
-  <!-- <h1 class="deta-hd">
-    最近
-  </h1> -->
-  <!-- <div class="rec">
-    最近更新
-  </div> -->
-  <ul class="p-list">
-    <% page.posts.each(function (post) { %>
-      <% if(!post.cateName) { %>
-        <% if(!post.plist) { %>
-          <!-- <div class="p-list"> -->
-          <li class="p-list-item clearfix">
-            <div class="ph-cate">
-              <%- list_tags(post.categories, { show_count: false }) %>
-            </div>
-            <!-- S 文章标题 -->
-            <div class="d-pp-h" style="margin-bottom: 12px;">
-              <h1 class="p-h p-list-item-title"><a class="hoverLine" href="<%- url_for(post.path) %>"
-                  title="<%- post.title %>">
-                  <%= post.title %>
-                </a></h1>
-            </div>
-            <!-- E 文章标题 -->
-            <!-- S 文章图片 -->
-            <div class="post-img">
-              <a href="<%- url_for(post.path) %>" title="<%= post.title %>">
-                <div class="overlay"></div>
-                <img src="<%- post.img %>" alt="文章封面">
-              </a>
-            </div>
-            <!-- E 文章图片 -->
-            <div class="p-list-item-right img-pc">
-              <!-- S 标题内容 -->
-              <div class="content">
-                <div class="zy">
-                  <%- post.zy %><span>...</span><a class="readmore hoverLine hoverLine-thin"
-                      href="<%- url_for(post.path) %>"></a>
-                </div>
-              </div>
-              <!-- E 标题内容 -->
-              <!-- S 文章信息 -->
-              <div class="post-info">
-                <ul>
-                  <!-- <img src="<%- theme.userhead %>" alt="头像" style="display: inline-block; width: 30px; height: 30px; border-radius: 50%;"> -->
-                  <li class="date post-info-item">
-                    <span>
-                      <%- date(post.date, "YYYY-MM-DD" ) %>
-                    </span>
-                    <span>·</span>
-                    <span style="color: #999; font-weight: bold;"><%- theme.uname %></span>
-                  </li>
-                </ul>
-              </div>
-              <!-- E 文章信息 -->
-            </div>
-          </li>
-          <!-- </div> -->
-          <% } else { %>
-            <li class="post-wrap clearfix"
-              style="float: none; width: 730px; box-sizing: border-box; margin-bottom: 50px; box-shadow: 0 0 10px 0px rgba(146, 146, 146, 0.12); border-radius: 10px; overflow: hidden;">
-              <div class="post-bg-hd">
-                <img src="<%- post.img %>" alt="" style="width: 100%; height: 380px;">
-              </div>
-              <div class="post" style="padding: 25px 50px 0;">
-                <div class="m-tit">
-                  <div class="m-tit-con">
-                    <div class="ph-cate">
-                      <%- list_tags(post.categories, { show_count: false }) %>
-                    </div>
-                    <h1>
-                      <%- post.title %>
-                    </h1>
-                  </div>
-                </div>
-                <div class="post-con">
-                  
-                  <div class="post-text">
-                    <%- post.excerpt %>
-                  </div>
-                </div>
-                <%- js('js/prism') %>
-              </div>
-              <a href="<%- url_for(post.path) %>" style="/* padding: 5px 10px; */
-                display: block;
-                width: 130px;
-                height: 45px;
-                line-height: 45px;
-                text-align: center;
-                /* margin: 0 auto; */
-                background: linear-gradient(-90deg, rgb(121 199 255) 10%, rgb(24 160 219) 100%);
-                color: #fff;
-                border-radius: 6px;
-                font-weight: bold;
-                margin-top: 40px;
-            ">阅读全文</a>
-            </li>
-            <% } %>
-              <% } %>
-                <% }) %>
-  </ul>
-</div>
-<!-- 分页 -->
-<% if (page.total> 1){ %>
-  <div id="pageNav" style="clear: both;">
-    <% var prev_text=__('上一页');var next_text=__('下一页') %>
-      <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
-  </div>
+<%- partial('_partial/category-heading') %>
+<div class="a-index-cate-h">
+  <span class="a-index-cate-content">最近</span>
+  <% if (page.total> 1){ %>
+    <div id="a-index-pageNav" style="display: inline-block; clear: both; margin-left: auto;">
+      <% var prev_text=__('<');var next_text=__('>') %>
+        <%- paginator({ prev_text: prev_text, next_text: next_text}) %>
+    </div>
   <% } %>
+</div>
+<div id="a-index">
+  <% page.posts.each(function (post) { %>
+    <div class="a-list-item">
+      <div class="a-list-item-img-body">
+        <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');"></a>
+      </div>
+      <div class="a-list-item-content">
+        <div class="a-list-item-content-cate">
+          <%- list_tags(post.categories, { show_count: false }) %>
+          <span>
+            <%- date(post.date, "YYYY-MM-DD" ) %>
+          </span>
+        </div>
+        <h1>
+          <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
+            <%= post.title %>
+          </a>
+        </h1>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<% if (page.total> 1){ %>
+  <div id="pageNav" class="aIndexPageNav" style="clear: both;">
+    <% var prev_text=__('上一页');var next_text=__('下一页') %>
+    <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
+  </div>
+<% } %>
+
+<% site.categories.map(function(category){ %>
+  <div class="index-list">
+    <div class="a-index-cate-h">
+      <span class="a-index-cate-content"><%= category.name %></span>
+      <a href="/c/<%- category.name %>/" class="a-index-more">浏览更多 ></a>
+    </div>
+    <div id="a-index-cate-wrap">
+      <div class="a-index-cate-h">
+        <span class="a-index-cate-content"><%= category.name %></span>
+      </div>
+      <div id="a-index" class="a-index-cate left">
+        <% category.posts.sort('-date').limit(1).map(function(post, i){  %>
+          <div class="a-list-item">
+            <div class="a-list-item-img-body" style="padding-top: 65.8%;">
+              <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+                <span class="overhid"></span>
+              </a>
+              <div class="a-list-item-content">
+                <h1>
+                  <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                    <%= post.title %>
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <div id="a-index" class="a-index-cate right">
+        <% category.posts.sort('-date').limit(7).map(function(post, i){  %>
+          <div class="a-list-item">
+            <div class="a-list-item-img-body">
+              <a class="a-list-item-img-content" title="<%- post.title %>" href="<%- url_for(post.path) %>" style="background-image: url('<%- post.img %>');">
+                <span class="overhid"></span>
+              </a>
+              <div class="a-list-item-content">
+                <h1>
+                  <a href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                    <%= post.title %>
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <a href="/c/<%- category.name %>/" class="a-index-more a-index-more-m">浏览更多</a>
+    </div>
+  </div>
+<% }) %>

@@ -2,63 +2,33 @@
   <div class="t-h hRec" style="margin-bottom: 20px;">
     <h3 style="font-weight: bold; font-size: 18px;">最近</h3>
   </div>
-  <ul>
-    <% site.posts.sort('date', -1).limit(4).each(function(post){ %>
-      <!-- <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span> -->
-      <!-- <li class="post-item"><a href="<%- url_for(post.path) %>"><%- post.title || '无标题' %></a></li> -->
-      <li class="p-list-item clearfix"
-        style="border-radius: 10px;">
-        <!-- S 文章图片 -->
-        <% if(post.img) { %>
-          <div class="post-img" style="display: inline-block; width: 28%; vertical-align: bottom;">
-            <a href="<%- url_for(post.path) %>" title="<%= post.title %>" style="float: none; width: 100%; min-height: 70px; border-radius: 10px; overflow: hidden; font-size: 15px;">
-              <div class="overlay"></div>
-              <img src="<%- post.img %>" alt="文图" style="min-height: auto; width: 100%; height: 100%;">
-            </a>
+  <% site.posts.sort('date', -1).limit(4).each(function(post){ %>
+    <div id="recent-item">
+      <div class="recent-item-left">
+        <div class="recent-item-img-body">
+          <a href="<%- url_for(post.path) %>" title="<%= post.title %>" style="background-image: url('<%- post.img %>');">
+            <div class="overlay"></div>
+          </a>
+        </div>
+      </div>
+      <div class="recent-item-right">
+        <div class="recent-item-content">
+          <div class="recent-item-content-cate">
+            <%- list_tags(post.categories, { show_count: false }) %>
           </div>
-          <% } %>
-            <!-- E 文章图片 -->
-            <div class="p-list-item-right" style="position: relative; display: inline-block; width: 67%; margin-left: 2%;">
-              <!-- S 标题内容 -->
-              <div class="content">
-                <div class="ph-cate">
-                  <%- list_categories(post.categories, {
-                    show_count: false
-                  }) %>
-                </div>
-                <!-- S 文章标题 -->
-                <div class="d-pp-h">
-                  <h1 class="" style="line-height: 1.3;">
-                    <% if(is_current(post.path)) { %>
-                      <a class="hoverLine" href="<%- url_for(post.path) %>" title="<%- post.title %>"
-                        style="width: 100%; color: #18a0db; font-size: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; transition: all .2s;">
-                        <%= post.title %>
-                      </a>
-                      <% } else { %>
-                      <a class="hoverLine" href="<%- url_for(post.path) %>" title="<%- post.title %>"
-                        style="width: 100%; font-size: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; transition: all .2s;">
-                        <%= post.title %>
-                      </a>
-                    <% } %>
-                  </h1>
-                </div>
-                <!-- E 文章标题 -->
-
-                <!-- S 文章信息 -->
-                <div class="post-info" style="padding: 0; margin: 0; border: 0;">
-                  <ul>
-                    <li class="date post-info-item">
-                      <span style="font-size: 12px; font-weight: normal;">
-                        <%- date(post.date, "YYYY-MM-DD" ) %>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <!-- E 文章信息 -->
-              </div>
-              <!-- E 标题内容 -->
-            </div>
-      </li>
-      <% }); %>
-  </ul>
+          <div class="recent-item-content-body">
+            <% if(is_current(post.path)) { %>
+              <a class="current" href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                <%= post.title %>
+              </a>
+            <% } else { %>
+              <a class="" href="<%- url_for(post.path) %>" title="<%- post.title %>">
+                <%= post.title %>
+              </a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }); %>
 </div>

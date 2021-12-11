@@ -1033,6 +1033,7 @@ strong {
   color: #8b93a9;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   font-weight: bold;
+  line-height: 1.4;
 }
 
 .p-info-title .u-title .post-date {
@@ -1451,7 +1452,7 @@ strong {
   display: block;
   width: 140px;
   height: 33px;
-  background: url('/asset/lernb.png');
+  /* background: url('/asset/lernb.png'); */
   background-size: contain;
   font-size: 0;
   transition: box-shadow 0.3s ease;
@@ -1603,7 +1604,7 @@ strong {
 
 .hello {
   min-width: 372px;
-  margin-top: 4rem;
+  margin-top: 3rem;
   font-size: 2.2rem;
   color: #094067;
 }
@@ -3184,7 +3185,7 @@ code {
   display: none;
 }
 
-.post-wrap .entry-content img {
+.post-wrap .entry-content img, .post-wrap .title-bg img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -3476,7 +3477,7 @@ code {
 
 #article-nav .article-nav-link-wrap:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 12px 0px rgb(24 160 219 / 25%);
+  box-shadow: 0 0 16px 0px rgb(24 160 219 / 58%);
 }
 
 #article-nav .article-nav-link-wrap:hover::before {
@@ -3757,7 +3758,7 @@ code {
   .post-wrap .headimg::after {
     filter: blur(2px);
   }
-  .post-wrap .entry-content img {
+  .post-wrap .entry-content img, .post-wrap .title-bg img {
     max-width: initial;
     /* margin: 0 auto; */
     width: calc(100% / 0.9);
