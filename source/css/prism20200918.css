@@ -12,7 +12,7 @@ code[class*="language-"], pre[class*="language-"] {
   background: none;
   /* text-shadow: 0 1px white; */
   font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-  font-size: 12px;
+  font-size: 13px;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -129,8 +129,7 @@ div[class*="plusBtn"] .preBg {
 }
 
 .token.comment {
-  font-size: 12px;
-  font-style: italic;
+  font-size: 13px;
   color: #b2b2b5;
 }
 

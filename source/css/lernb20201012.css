@@ -2945,31 +2945,31 @@ html {
 .success {
   padding: 15px 20px;
   margin-bottom: 16px;
-  color: #25a35a;
-  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #5f6c7b;
+  /* border: 1px solid rgba(46, 204, 113, 0.3); */
   border-left: 4px solid #2ecc71;
-  border-radius: 3px;
-  background-color: rgba(46, 204, 113, 0.3);
+  border-radius: 5px;
+  background-color: rgba(46, 204, 113, 0.15);
 }
 
 .warning {
   padding: 15px 20px;
   margin-bottom: 16px;
-  color: #c29d0b;
-  border: 1px solid rgba(241, 196, 15, 0.3);
-  border-left: 4px solid #f1c40f;
-  border-radius: 3px;
-  background-color: rgba(241, 196, 15, 0.3);
+  color: #5f6c7b;
+  /* border: 1px solid rgba(241, 196, 15, 0.3); */
+  border-left: 4px solid #f0b375;
+  border-radius: 5px;
+  background-color: #fdf4ea;
 }
 
 .tip {
   padding: 15px 20px;
   margin-bottom: 16px;
-  color: #217bb8;
-  border: 1px solid rgba(52, 152, 219, 0.3);
-  border-left: 4px solid #3498db;
-  border-radius: 3px;
-  background-color: rgba(52, 152, 219, 0.3);
+  color: #5f6c7b;
+  /* border: 1px solid rgba(108,185,224,0.15); */
+  border-left: 4px solid #6cb9e0;
+  border-radius: 5px;
+  background-color: rgba(108,185,224,0.15);
 }
 
 .wrap .post-wrap .entry-content blockquote> :last-child, .wrap .post-wrap .entry-content blockquote> :last-child> :last-child, .wrap .post-wrap .entry-content blockquote> :last-child> :last-child>:last-child {
